@@ -26,9 +26,10 @@ body {
 header {
     height: 85px;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: space-between;
     background-color: darkslategray;
+    padding: 20px;
 }
 
 main {
@@ -52,13 +53,13 @@ section {
     margin-top: var(--gutter);
     margin-bottom: var(--gutter);
     border: solid 2px black;
-    box-shadow: lightgrey 10px 10px;
+    box-shadow: lightslategray 10px 10px;
 }
 div {
-    border: 2px black solid;
+    
     padding: 20px;
     margin: 20px;
-    box-shadow: darkgray 10px 10px;
+    
 }
 footer{
     display: flex;
@@ -84,3 +85,24 @@ a {
     background-position: center;
     background-size: cover;
 }
+.avatar {
+    display: flex;
+    align-items: center;
+    
+}
+.avatar img:hover{
+    width: 55px;
+    transition-duration: 50ms, 50ms;
+    
+    
+    
+}
+.main-section {
+    background-color:darkslategray;
+    
+}
+.scene{
+    border: 2px #01FE05 dotted;
+
+}
+
