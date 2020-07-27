@@ -19,7 +19,7 @@ body {
     --footer-height: 25px;
     
     font-family: 'Titillium Web', sans-serif;
-    background-image: url(../assets/download.png)
+    
 }
 
 main {
@@ -42,6 +42,11 @@ section {
     padding-bottom: var(--gutter);
     margin-top: var(--gutter);
     margin-bottom: var(--gutter);
-    border: solid 2px var(--color1);
+    border: solid 2px black;
+}
+div {
+    border: 2px black solid;
+    padding: 20px;
+    margin: 20px;
 }
 
