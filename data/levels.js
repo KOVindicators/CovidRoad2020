@@ -36,4 +36,7 @@ const store = {
     ],
 };
 
-
+const levels = [
+    store,
+];
+export default levels;

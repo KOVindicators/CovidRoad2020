@@ -1,6 +1,6 @@
 // import functions and grab DOM elements
 import { generateRandomOccupations } from '../utils.js';
-import { renderStartPage} from '../render.js';
+import { renderStartPage } from '../render.js';
 const mainEl = document.querySelector('main');
 // initialize state
 
