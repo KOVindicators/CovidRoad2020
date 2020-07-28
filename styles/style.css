@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 body {
     /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
-    --color1: hsla(349, 69%, 76%, 1);
-    --color2: hsla(207, 67%, 44%, 1);
-    --color3: hsla(200, 61%, 56%, 1);
-    --color4: hsla(187, 41%, 94%, 1);
-    --color5: hsla(170, 28%, 95%, 1);
+    --color1: #01FE05;
+    --color2: darkslategray;
+    --color3: black;
+    --color4: lightslategray;
+    --color5: greenyellow;
 
     /* --color1: hsla(45, 86%, 83%, 1);
     --color2: hsla(135, 65%, 98%, 1);
@@ -21,8 +21,8 @@ body {
     font-family: 'Press Start 2P', cursive;
     background-color: black;
     color: #01FE05;
-
 }
+
 header {
     height: 85px;
     display: flex;
@@ -31,6 +31,10 @@ header {
     background-color: darkslategray;
     padding: 20px;
 }
+/* 
+header ul {
+    width: 32%;
+} */
 
 main {
     display: flex;
@@ -43,7 +47,6 @@ main {
 section {
     background-color: var(--color5);
     width: 800px;
-    height: 556px;
     max-width: 80%;
     display: flex;
     flex-direction: column;
@@ -56,12 +59,15 @@ section {
     border: solid 2px black;
     box-shadow: lightslategray 10px 10px;
 }
+
+
 div {
     
     padding: 20px;
     margin: 20px;
     
 }
+
 footer{
     display: flex;
     justify-content: center;
@@ -69,6 +75,7 @@ footer{
     padding: 30px;
     margin: 30px;
 }
+
 a:visited {
     color: greenyellow
 
@@ -80,38 +87,47 @@ a:visited {
     padding: 20px;
     margin: 20px;
 }
-.image {
+
+.image-box {
     background-image: url(../assets/mounthood.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    height: 556px;
 }
+/* .image-box{
+    height set?
+} */
+
 .avatar {
     display: flex;
     align-items: center;
     
 }
+
 .avatar img:hover{
     width: 55px;
     transition-duration: 50ms, 50ms;
     
-    
-    
 }
+
 .main-section {
     background-color:darkslategray;
     
     
 }
+
 .scene{
     border: 2px #01FE05 dotted;
 
 }
+
 label{
     padding: 10px;
     display: block;
     font-size: 20px;
 }
+
 .glow:hover, .glow:checked  {
     
   color: #fff;
@@ -119,11 +135,13 @@ label{
   animation: label 1s ease-in-out infinite alternate;
 
 }
+
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 button {     
     margin: 10px;
     padding: 5px;
