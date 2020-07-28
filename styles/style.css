@@ -42,7 +42,8 @@ main {
 
 section {
     background-color: var(--color5);
-    width: 1000px;
+    width: 800px;
+    height: 556px;
     max-width: 80%;
     display: flex;
     flex-direction: column;
@@ -65,6 +66,8 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 30px;
+    margin: 30px;
 }
 a:visited {
     color: greenyellow
@@ -100,9 +103,23 @@ a {
 .main-section {
     background-color:darkslategray;
     
+    
 }
 .scene{
     border: 2px #01FE05 dotted;
 
 }
+label{
+    display: block;
+    margin: 20px;
+
+}
+button {     
+    font-size: 20px;
+    font-family: 'Press Start 2P';
+    background-color: darkslategray;    
+     color: green;     
+     border: 2px solid green; 
+     border-radius: 8px;
+    }
 
