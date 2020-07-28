@@ -74,9 +74,7 @@ a:visited {
 
 
 }
-a {
-    color: peru;
-}
+
 .level {
     font-size: 25px;
     padding: 20px;
@@ -110,16 +108,40 @@ a {
 
 }
 label{
+    padding: 10px;
     display: block;
-    margin: 20px;
+    font-size: 20px;
+}
+.glow:hover, .glow:checked  {
+    
+  color: #fff;
+  /* text-align: center; */
+  animation: label 1s ease-in-out infinite alternate;
 
 }
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 button {     
+    margin: 10px;
+    padding: 5px;
+    
     font-size: 20px;
     font-family: 'Press Start 2P';
     background-color: darkslategray;    
-     color: green;     
-     border: 2px solid green; 
-     border-radius: 8px;
-    }
+    color: #01FE05;     
+    border: 2px solid #01FE05; 
+    border-radius: 8px;
+}
 
+@keyframes label {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px  #01FE05, 0 0 40px  #01FE05, 0 0 50px  #01FE05, 0 0 60px  #01FE05, 0 0 70px  #01FE05;
+        }
+        
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px  #01FE05, 0 0 40px  #01FE05, 0 0 50px  #01FE05, 0 0 60px  #01FE05, 0 0 70px #01FE05, 0 0 80px #01FE05;
+        }
+}
