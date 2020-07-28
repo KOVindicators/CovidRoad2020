@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 body {
     /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
     --color1: hsla(349, 69%, 76%, 1);
@@ -18,8 +18,18 @@ body {
     --gutter: 30px;
     --footer-height: 25px;
     
-    font-family: 'Titillium Web', sans-serif;
-    background-image: url(../assets/download.png)
+    font-family: 'Press Start 2P', cursive;
+    background-color: black;
+    color: #01FE05;
+
+}
+header {
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: darkslategray;
+    padding: 20px;
 }
 
 main {
@@ -32,7 +42,8 @@ main {
 
 section {
     background-color: var(--color5);
-    width: 1000px;
+    width: 800px;
+    height: 556px;
     max-width: 80%;
     display: flex;
     flex-direction: column;
@@ -42,6 +53,95 @@ section {
     padding-bottom: var(--gutter);
     margin-top: var(--gutter);
     margin-bottom: var(--gutter);
-    border: solid 2px var(--color1);
+    border: solid 2px black;
+    box-shadow: lightslategray 10px 10px;
+}
+div {
+    
+    padding: 20px;
+    margin: 20px;
+    
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    margin: 30px;
+}
+a:visited {
+    color: greenyellow
+
+
 }
 
+.level {
+    font-size: 25px;
+    padding: 20px;
+    margin: 20px;
+}
+.image {
+    background-image: url(../assets/mounthood.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.avatar {
+    display: flex;
+    align-items: center;
+    
+}
+.avatar img:hover{
+    width: 55px;
+    transition-duration: 50ms, 50ms;
+    
+    
+    
+}
+.main-section {
+    background-color:darkslategray;
+    
+    
+}
+.scene{
+    border: 2px #01FE05 dotted;
+
+}
+label{
+    padding: 10px;
+    display: block;
+    font-size: 20px;
+}
+.glow:hover, .glow:checked  {
+    
+  color: #fff;
+  /* text-align: center; */
+  animation: label 1s ease-in-out infinite alternate;
+
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+button {     
+    margin: 10px;
+    padding: 5px;
+    
+    font-size: 20px;
+    font-family: 'Press Start 2P';
+    background-color: darkslategray;    
+    color: #01FE05;     
+    border: 2px solid #01FE05; 
+    border-radius: 8px;
+}
+
+@keyframes label {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px  #01FE05, 0 0 40px  #01FE05, 0 0 50px  #01FE05, 0 0 60px  #01FE05, 0 0 70px  #01FE05;
+        }
+        
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px  #01FE05, 0 0 40px  #01FE05, 0 0 50px  #01FE05, 0 0 60px  #01FE05, 0 0 70px #01FE05, 0 0 80px #01FE05;
+        }
+}
