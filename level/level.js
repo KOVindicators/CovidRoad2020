@@ -93,6 +93,14 @@ form.addEventListener('submit', (e) => {
 
 }); 
 
+const levelAvatar = document.querySelector('#level-avatar');
+window.addEventListener('load', () => {
+    levelAvatar.classList.add('scene-animation');
+    
+});
+
+
+
 
 
 

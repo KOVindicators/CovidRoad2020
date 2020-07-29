@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,700;1,900&display=swap");
 body {
     /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
     --color1: #01FE05;
@@ -24,6 +25,7 @@ body {
 }
 .avatar-image {
     width: 60px;
+
 }
 
 header {
@@ -73,7 +75,7 @@ div {
 
 footer{
     display: flex;
-    justify-content: space-evenly;git
+    justify-content: space-evenly;
     align-items: center;
     padding: 30px;
     margin: 30px;
@@ -123,10 +125,12 @@ a:visited {
     position: relative;
     left: 250px;
     top: 170px;
+    margin-bottom: 20px;
+   
     
 }
 
-#level-avatar:hover {
+#level-avatar.scene-animation {
     transition-property: left;
     transition-duration: 3s;
     position: relative;
@@ -137,6 +141,7 @@ a:visited {
 
 .scene{
     border: 2px #01FE05 dotted;
+    font-size: 1em;
 
 }
 
