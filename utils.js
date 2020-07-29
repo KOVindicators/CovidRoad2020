@@ -20,7 +20,16 @@ export function generateRandomOccupations(){
 export function findById(id, array) {
     const foundItem = null;
     for (let i = 0; i < array.length; i++) {
-        if (id === array[i]._id) return array[i];
+        if (id === array[i].id) return array[i];
     }
     return foundItem;
 }
+
+export function getUser() {
+    return JSON.parse(localStorage.getItem('PLAYER'));
+}
+
+export function setUser(player) {
+    const stringyPlayer = JSON.stringify(player);
+    localStorage.setItem('PLAYER', stringyPlayer);
+} 

@@ -21,16 +21,21 @@ export function renderStartPage(occupationList) {
     const nameLabelEl = document.createElement('label');
     nameLabelEl.textContent = 'Name:';
     const nameInput = document.createElement('input');
+    nameInput.name = 'name';
     nameLabelEl.append(nameInput);
 
     const ageLabelEl = document.createElement('label');
     ageLabelEl.textContent = 'Age:';
     const ageInput = document.createElement('input');
+    ageInput.name = 'age';
+    ageInput.type = 'number';
     ageLabelEl.append(ageInput);
 
     const emailLabelEl = document.createElement('label');
     emailLabelEl.textContent = 'Email:';
     const emailInput = document.createElement('input');
+    emailInput.name = 'email';
+    emailInput.type = 'email';
     emailLabelEl.append(emailInput);
     formEl.append(nameLabelEl, ageLabelEl, emailLabelEl);
     occupationList.forEach(occupation => {
@@ -46,7 +51,7 @@ export function renderStartPage(occupationList) {
         const radioButtonEl = document.createElement('input');
         radioButtonEl.type = 'radio';
         radioButtonEl.name = 'occupation';
-        radioButtonEl.id = occupation.id;
+        radioButtonEl.value = occupation.id;
         radioButtonEl.classList.add('hidden');
         labelEl.append(radioButtonEl, imgEl);
         formEl.append(labelEl);
@@ -57,7 +62,7 @@ export function renderStartPage(occupationList) {
     submitButtonEl.textContent = 'Start:';
     submitButtonEl.type = 'submit';
 
-
-    mainSectionEl.append(startImgEl, formEl, submitButtonEl);
+    formEl.append(submitButtonEl);
+    mainSectionEl.append(startImgEl, formEl);
     return mainSectionEl;
 }
