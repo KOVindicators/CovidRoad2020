@@ -83,7 +83,7 @@ form.addEventListener('submit', (e) => {
     const aEl = document.createElement('a');
     
     aEl.textContent = 'More Info Here';
-    aEl.href = result.url
+    aEl.href = result.url;
     aEl.target = '_blank';
     tooltipEl.textContent = 'Covid Information ';
     
