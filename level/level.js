@@ -1,5 +1,5 @@
 import levels from '../data/levels.js';
-import { findById, getUser } from '../utils.js';
+import { findById, getUser, setUser } from '../utils.js';
 import occupations from '../data/occupations.js';
 
 const user = getUser();
@@ -52,23 +52,49 @@ bigDivEl.append(levelName, imageBox, mainSectionEl);
 
 
 main.append(bigDivEl);
-//     <div class="scene">set the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the scene</div>
-//     <form>
-//         <div>
-//         <label class="glow"> 1. choice 1
-//             <input type="radio" name="choice" id="choice1">
-//         </label>
-//         <label class="glow"> 2. choice 2
-//             <input type="radio" name="choice" id="choice2">
-//         </label>
-//         <label class="glow"> 3. choice 3 extra text and shit
-        
-//             <input type="radio" name="choice" id="choice3">
-//         </label>
-//         </div>
-//         <button class="glow" type="submit">SUBMIT</button>
-//     </form>
-// </section>
+const form = document.querySelector('form');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const choiceId = formData.get('choice');
+    const result = findById(choiceId, currentLevel.choices).result;
+    user.health += result.health;
+    user.wealth += result.wealth;
+    const resultSection = document.createElement('section');
+    const resultDiv = document.createElement('div');
+
+    resultDiv.textContent = result.description;
+
+    const aEl = document.createElement('a');
+    aEl.classList.add('glow');
+    aEl.textContent = 'For more info, visit: ' + result.url;
+    aEl.href = result.url;
+
+    resultSection.append(resultDiv, aEl);
+    bigDivEl.append(resultSection);
+
+    setUser(user);
+    const nextButton = document.createElement('button');
+
+    
+
+}); 
+   
+   
+ 
+   
+
+   
+    nextButton.addEventListener('click', () => {
+
+ // window.location = '../level';
+
+});
+  
+    
 
 
-// </main>
+
+
+
