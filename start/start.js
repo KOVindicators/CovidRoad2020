@@ -39,6 +39,7 @@ form.addEventListener('submit', (e) => {
     };
 
     setUser(user);
+    window.location = '../level';
     
 });
 
