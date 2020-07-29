@@ -8,6 +8,65 @@ const params = new URLSearchParams(window.location.search);
 const levelId = params.get('id');
 const currentLevel = findById(levelId, levels);
 
+const headerEl = document.querySelector('header');
+const ulLeftEl = document.createElement('ul');
+ulLeftEl.classList.add('avatar');
+
+const liImgEl = document.createElement('li');
+const liImg = document.createElement('img');
+liImg.src = `../assets/${avatarImage}`;
+liImg.classList.add('avatar-image');
+liImgEl.append(liImg);
+
+
+const liNameEl = document.createElement('li');
+liNameEl.textContent = `Name : ${user.name}`;
+
+ulLeftEl.append(liImgEl, liNameEl);
+
+const ulCenterEl = document.createElement('ul');
+const liProgress = document.createElement('li');
+const numberCompleted = Object.keys(user.completed).length;
+liProgress.textContent = `Level: ${numberCompleted} of ${levels.length}`;
+ulCenterEl.append(liProgress);
+
+const ulRightEl = document.createElement('ul');
+const liMoneyEl = document.createElement('li');
+const liHealthEl = document.createElement('li');
+liMoneyEl.textContent = `Money: ${user.wealth}`;
+liHealthEl.textContent = `Health: ${user.health}`;
+ulRightEl.append(liMoneyEl, liHealthEl);
+
+headerEl.append(ulLeftEl, ulCenterEl, ulRightEl);
+ // <header>
+// <ul class="avatar">
+// <li>
+//     <img src="../assets/protestor.png" width ="40px" height="auto">
+// </li>
+// <li>
+//  name: Dr. FunStix
+// </li> 
+// </ul>
+// <ul>
+// <!-- We want to add a LEVEL 1, LEVEL 2, LEVEL 3 in the center of our HEADER -->
+// <li>
+//     Level x of y
+// </li>
+// </ul>
+// <ul>
+// <li>
+//     money: 800
+// </li>
+// <li>
+//     health: 100
+// </li>
+// </ul>
+
+// </header>
+
+
+
+
 const main = document.querySelector('main');
 const bigDivEl = document.createElement('div');
 const levelName = document.createElement('h2');
@@ -87,7 +146,7 @@ form.addEventListener('submit', (e) => {
 
 }); 
    
-   
+
  
    
 
