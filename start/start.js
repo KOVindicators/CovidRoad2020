@@ -39,7 +39,7 @@ form.addEventListener('submit', (e) => {
     };
 
     setUser(user);
-    window.location = '../level';
+    window.location = '../level/?id=store';
     
 });
 

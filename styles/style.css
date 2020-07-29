@@ -22,6 +22,9 @@ body {
     background-color: black;
     color: #01FE05;
 }
+.avatar-image {
+    width: 60px;
+}
 
 header {
     height: 85px;
@@ -115,7 +118,9 @@ a:visited {
     
     
 }
-
+#level-avatar {
+    width: 60px;
+}
 .scene{
     border: 2px #01FE05 dotted;
 
