@@ -1,7 +1,7 @@
 //EXPORT FUNCTIONS
 import { findById } from './utils.js';
 import occupations from './data/occupations.js';
-import levels from './data/levels.js';
+import levels from './data/data-levels.js';
 // PAGE RENDERING FUNCTIONS WILL GO HERE:
 
 // RENDER HEADER

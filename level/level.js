@@ -1,4 +1,4 @@
-import levels from '../data/levels.js';
+import levels from '../data/data-levels.js';
 import { findById, getUser, setUser } from '../utils.js';
 import occupations from '../data/occupations.js';
 import { renderHeader } from '../render.js';
