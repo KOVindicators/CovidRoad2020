@@ -75,7 +75,7 @@ form.addEventListener('submit', (e) => {
     bigDivEl.append(resultSection);
 
     setUser(user);
-    const nextButton = document.createElement('button');
+   // const nextButton = document.createElement('button');
 
     
 
@@ -86,11 +86,10 @@ form.addEventListener('submit', (e) => {
    
 
    
-    nextButton.addEventListener('click', () => {
 
  // window.location = '../level';
 
-});
+
   
     
 
