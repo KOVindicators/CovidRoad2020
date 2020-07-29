@@ -167,3 +167,8 @@ button {
         text-shadow: 0 0 20px #fff, 0 0 30px  #01FE05, 0 0 40px  #01FE05, 0 0 50px  #01FE05, 0 0 60px  #01FE05, 0 0 70px #01FE05, 0 0 80px #01FE05;
         }
 }
+
+
+.hidden {
+    display: none;
+}
