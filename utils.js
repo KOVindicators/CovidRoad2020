@@ -1,5 +1,6 @@
 //utility functions for all pages.
 import occupations from './data/occupations.js';
+import events from './data/random-events.js';
 
 
 export function generateRandomOccupations(){
@@ -33,3 +34,16 @@ export function setUser(player) {
     const stringyPlayer = JSON.stringify(player);
     localStorage.setItem('PLAYER', stringyPlayer);
 } 
+
+export function rando() {
+    const random = Math.random();
+
+    if (random > .5) return true;
+    
+    return false;
+}
+
+export function getRandomEvent() {
+    const index = Math.floor(Math.random() * events.length);
+    return events[index];
+}

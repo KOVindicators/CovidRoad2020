@@ -41,7 +41,7 @@ const store = {
 const work = {
     id: 'work',
     picture: 'mounthood.jpg',
-    title: 'Grocery Shopping',
+    title: 'Work',
     description: "I'm all lost in the supermarket I can no longer shop happily I came in here for that special offer A guaranteed personality I wasn't born so much as I fell out Nobody seemed to notice me We had a hedge back home in the suburbs Over which I never could see I heard the people who lived on the ceiling Scream and fight most scarily Hearing that noise was my first ever feeling That's how it's been all around me",
     nextLevel: 'bar',
     choices: [{
@@ -80,7 +80,7 @@ const work = {
 const bar = {
     id: 'bar',
     picture: 'kellys.jpg',
-    title: 'Grocery Shopping',
+    title: 'Bar',
     description: "I'm all lost in the supermarket I can no longer shop happily I came in here for that special offer A guaranteed personality I wasn't born so much as I fell out Nobody seemed to notice me We had a hedge back home in the suburbs Over which I never could see I heard the people who lived on the ceiling Scream and fight most scarily Hearing that noise was my first ever feeling That's how it's been all around me",
     nextLevel: 'end',
     choices: [{
