@@ -50,7 +50,10 @@ const work = {
     id: 'work',
     picture: 'mounthood.jpg',
     title: 'Work',
+
     description: 'Another beautiful day in Portland!  Birds are tweeting and so is the president. Smartly avoiding Twitter, you  walk out the door and head to your job.  You get in your car and enjoy a peaceful commute to work.  Hardly any traffic!!! It like Portland in the 90s!  Halfway to work, you realize that you forgot your mask!!  Thats ok though because you keep a spare in your glove box (because you are a smart person).   It’s a pretty typical day at work, Chad is wearing his mask under his nose again.   A customer walks in without a mask.  He has a red hat and the sniffles.  Chad tells the man that masks are required to be in the building.  “I am not a sheeple!  I will not be masked!” exclaims the clearly agitated man.  What do you do?',
+
+    
     nextLevel: 'bar',
     choices: [{
         id: 'choice1',
@@ -95,7 +98,10 @@ const bar = {
     id: 'bar',
     picture: 'kellys.jpg',
     title: 'Bar',
+
     description: 'What a long day!  So much work, so much strife, so THIRSTY!!  A cold one and some company sounds like a way to cap off a nightmare of a day. You grab your mask and enter your favorite watering hole. Bellying up to the bar but right before you order, you hear the voice of your old coworker call your name.  You turn to find that they are at a table with a pitch of beer and an empty glass with your name on it.  What do you do?',
+
+
     nextLevel: 'end',
     choices: [{
         id: 'choice1',

@@ -73,7 +73,7 @@ div {
 
 footer{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;git
     align-items: center;
     padding: 30px;
     margin: 30px;
@@ -119,8 +119,22 @@ a:visited {
     
 }
 #level-avatar {
-    width: 60px;
+    width: 150px;
+    position: relative;
+    left: 250px;
+    top: 170px;
+    
 }
+
+#level-avatar:hover {
+    transition-property: left;
+    transition-duration: 3s;
+    position: relative;
+    left: -14em;
+    
+
+}
+
 .scene{
     border: 2px #01FE05 dotted;
 
@@ -182,6 +196,20 @@ button {
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+
+.result-image {
+    background-size: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 1em;
+    
+}
+
+.result-message {
+    margin: 20px;
+}
+
 @keyframes label {
     from {
         text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px  #01FE05, 0 0 40px  #01FE05, 0 0 50px  #01FE05, 0 0 60px  #01FE05, 0 0 70px  #01FE05;
@@ -190,4 +218,12 @@ button {
     to {
         text-shadow: 0 0 20px #fff, 0 0 30px  #01FE05, 0 0 40px  #01FE05, 0 0 50px  #01FE05, 0 0 60px  #01FE05, 0 0 70px #01FE05, 0 0 80px #01FE05;
         }
+
+
+}
+
+
+.hidden {
+    display: none;
+
 }
