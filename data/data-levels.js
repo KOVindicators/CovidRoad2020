@@ -81,13 +81,14 @@ const store2 = {
 };
 
 const work = {
-    id: 'work',
-    picture: 'mounthood.jpg',
+    id: 'work', 
+    picture: 'work-pics/deliveryWork.png',
     title: 'Work',
 
     description: 'Another beautiful day in Portland!  Birds are tweeting and so is the president. Smartly avoiding Twitter, you  walk out the door and head to your job.  You get in your car and enjoy a peaceful commute to work.  Hardly any traffic!!! It like Portland in the 90s!  Halfway to work, you realize that you forgot your mask!!  Thats ok though because you keep a spare in your glove box (because you are a smart person).   It’s a pretty typical day at work, Chad is wearing his mask under his nose again.   A customer walks in without a mask.  He has a red hat and the sniffles.  Chad tells the man that masks are required to be in the building.  “I am not a sheeple!  I will not be masked!” exclaims the clearly agitated man.  What do you do?',
 
     
+
     nextLevel: 'bar',
     choices: [{
         id: 'choice1',
