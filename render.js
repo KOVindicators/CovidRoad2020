@@ -1,5 +1,7 @@
 //EXPORT FUNCTIONS
-
+import { findById } from './utils.js';
+import occupations from './data/occupations.js';
+import levels from './data/levels.js';
 // PAGE RENDERING FUNCTIONS WILL GO HERE:
 
 // RENDER HEADER
@@ -65,5 +67,37 @@ export function renderStartPage(occupationList) {
     formEl.append(submitButtonEl);
     mainSectionEl.append(startImgEl, formEl);
     return mainSectionEl;
+}
+
+
+export function renderHeader(user) {
+    const ulLeftEl = document.createElement('ul');
+    ulLeftEl.classList.add('avatar');
+    const avatarImage = findById(user.occupation, occupations).avatar;
+
+    const liImgEl = document.createElement('li');
+    const liImg = document.createElement('img');
+    liImg.src = `../assets/${avatarImage}`;
+    liImg.classList.add('avatar-image');
+    liImgEl.append(liImg);
+
+    const liNameEl = document.createElement('li');
+    liNameEl.textContent = `Name : ${user.name}`;
+
+    ulLeftEl.append(liImgEl, liNameEl);
+
+    const ulCenterEl = document.createElement('ul');
+    const liProgress = document.createElement('li');
+    const numberCompleted = Object.keys(user.completed).length;
+    liProgress.textContent = `Levels: ${numberCompleted} of ${levels.length} completed`;
+    ulCenterEl.append(liProgress);
+
+    const ulRightEl = document.createElement('ul');
+    const liMoneyEl = document.createElement('li');
+    const liHealthEl = document.createElement('li');
+    liMoneyEl.textContent = `Money: ${user.wealth}`;
+    liHealthEl.textContent = `Health: ${user.health}`;
+    ulRightEl.append(liMoneyEl, liHealthEl);
+    return { ulLeftEl, ulCenterEl, ulRightEl };
 }
 
