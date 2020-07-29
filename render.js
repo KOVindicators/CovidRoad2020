@@ -2,6 +2,7 @@
 import { findById } from './utils.js';
 import occupations from './data/occupations.js';
 import levels from './data/data-levels.js';
+
 // PAGE RENDERING FUNCTIONS WILL GO HERE:
 
 // RENDER HEADER
@@ -101,3 +102,25 @@ export function renderHeader(user) {
     return { ulLeftEl, ulCenterEl, ulRightEl };
 }
 
+export function renderRandom(event) {
+    const sectionEl = document.createElement('section');
+    sectionEl.id = 'eventPopup';
+    sectionEl.classList.add('popup');
+
+    const titleEl = document.createElement('h2');
+    titleEl.textContent = event.title;
+    
+    const descriptionEl = document.createElement('div');
+    descriptionEl.textContent = event.description;
+
+    const continueButtonEl = document.createElement('button');
+    continueButtonEl.textContent = 'Next';
+    continueButtonEl.classList.add('glow');
+    continueButtonEl.addEventListener('click', () => {
+        const eventPopup = document.querySelector('#eventPopup');
+        eventPopup.classList.toggle('hidden');
+    });
+
+    sectionEl.append(titleEl, descriptionEl, continueButtonEl);
+    return sectionEl;
+}

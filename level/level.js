@@ -1,24 +1,34 @@
 import levels from '../data/data-levels.js';
-import { findById, getUser, setUser } from '../utils.js';
 import occupations from '../data/occupations.js';
-import { renderHeader } from '../render.js';
+import { findById, getUser, setUser, getRandomEvent, rando } from '../utils.js';
+
+import { renderHeader, renderRandom } from '../render.js';
 
 const user = getUser();
 const avatarImage = findById(user.occupation, occupations).avatar;
 const params = new URLSearchParams(window.location.search);
 const levelId = params.get('id');
 const currentLevel = findById(levelId, levels);
-
+const bigDivEl = document.createElement('div');
 const headerEl = document.querySelector('header');
 const { ulLeftEl, ulCenterEl, ulRightEl } = renderHeader(user);
-
 headerEl.append(ulLeftEl, ulCenterEl, ulRightEl);
+
+if (rando()) {
+    const event = getRandomEvent();
+    const eventSectionEl = renderRandom(event);
+    user.health += event.health;
+    user.wealth += event.wealth;
+    bigDivEl.append(eventSectionEl);
+
+}
+
 
 
 const main = document.querySelector('main');
-const bigDivEl = document.createElement('div');
+
 const levelName = document.createElement('h2');
-levelName.textContent = levels[0].title;
+levelName.textContent = currentLevel.title;
 const imageBox = document.createElement('section');
 imageBox.classList.add('image-box');
 imageBox.style.backgroundImage = `url(../assets/${currentLevel.picture})`;
@@ -66,11 +76,21 @@ form.addEventListener('submit', (e) => {
     const resultSection = document.createElement('section');
     const resultDiv = document.createElement('div');
     resultDiv.textContent = result.description;
+    const tooltipEl = document.createElement('div');
+    tooltipEl.classList.add('tooltip');
+    const spanEl = document.createElement('span');
+    spanEl.classList.add('tooltiptext');
     const aEl = document.createElement('a');
-    aEl.classList.add('glow');
-    aEl.textContent = 'For more info, visit: ' + result.url;
+    
+    aEl.textContent = 'More Info Here';
     aEl.href = result.url;
-    resultSection.append(resultDiv, aEl);
+    aEl.target = '_blank';
+    tooltipEl.textContent = 'Covid Information ';
+    
+    spanEl.textContent = result.info;
+    spanEl.append(aEl);
+    tooltipEl.append(spanEl);
+    resultSection.append(resultDiv, tooltipEl);
     bigDivEl.append(resultSection);
     user.completed[currentLevel.id] = true;
     
