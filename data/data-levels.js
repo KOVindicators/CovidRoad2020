@@ -112,7 +112,7 @@ const bar = {
             description: 'You happily sit at the table and pour yourself a beer.  Halfway through your first glass, you notice that your former coworker has the sniffles and keeps wiping his nose.  It is then that you realize that the pitcher you just poured from had a greasy feel to it and you are nauseated . What are you doing in a bar anyways?  ITS NOT SAFE',
             
             url: 'https://www.businessinsider.com/why-bars-are-so-dangerous-for-spreading-the-coronavirus-2020-7',
-            info: 'Being at a bar is bad news according to Dr Faucci. Drink and home and help stop the spread of COVID 19 ' 
+            info: 'Being at a bar is bad news according to Dr Fauci. Drink and home and help stop the spread of COVID 19 ' 
         } 
     },
     {
@@ -124,7 +124,7 @@ const bar = {
             description: 'You politely decline the beer but you buy one at the bar and join your coworker at their table.  After they drone on and on about your former boss, you notice that they have runny eyes and are wiping their nose frequently.  After they cough suddenly, you step up from the table and politely say you have to go. Also, what are you doing in a bar anyways? ITS NOT SAFE',
             
             url: 'https://www.businessinsider.com/why-bars-are-so-dangerous-for-spreading-the-coronavirus-2020-7',
-            info: 'Being at a bar is bad news according to Dr Faucci. Drink and home and help stop the spread of COVID 19  ' 
+            info: 'Being at a bar is bad news according to Dr Fauci. Drink and home and help stop the spread of COVID 19  ' 
         } 
     },
     {
@@ -136,7 +136,7 @@ const bar = {
             description: 'You suddenly realize that it is CRAZY to be in a bar during a pandemic.  Places like this spread COVID 19 like crazy. You make a quick apology and exit the bar because ITS NOT SAFE',
             
             url: 'https://www.businessinsider.com/why-bars-are-so-dangerous-for-spreading-the-coronavirus-2020-7',
-            info: 'Being at a bar is bad news according to Dr Faucci. Drink and home and help stop the spread of COVID 19  ' 
+            info: 'Being at a bar is bad news according to Dr Fauci. Drink and home and help stop the spread of COVID 19  ' 
         } 
     }
     ],
