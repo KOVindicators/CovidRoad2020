@@ -66,3 +66,4 @@ export function renderStartPage(occupationList) {
     mainSectionEl.append(startImgEl, formEl);
     return mainSectionEl;
 }
+
