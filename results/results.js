@@ -10,15 +10,17 @@ headerEl.append(ulLeftEl, ulCenterEl, ulRightEl);
 
 // const main = document.querySelector('main');
 const imageBox = document.querySelector('.image-box');
+imageBox.classList.add('result-image');
 const h2 = document.querySelector('.result-message');
 const button = document.getElementById('restart-button');
 
 
 if (user.health <= 0) {
-    imageBox.style.backgroundImage = 'url(../assets/placement.png)';
+    imageBox.style.backgroundImage = 'url(../assets/gravestone.png)';
+    imageBox.textContent = `RIP ${user.name}`;
     h2.textContent = `${user.name} contracted Covid and died.`;
 } else {
-    imageBox.style.backgroundImage = 'url(../assets/logo.jpg)';
+    imageBox.style.backgroundImage = 'url(../assets/trophy.png)';
     h2.textContent = `${user.name} Survived! Congratuations!`;
 }
 
