@@ -172,6 +172,31 @@ button {
     border-radius: 8px;
 }
 
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 400px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
 .result-image {
     background-size: 50%;
     display: flex;
@@ -193,9 +218,12 @@ button {
     to {
         text-shadow: 0 0 20px #fff, 0 0 30px  #01FE05, 0 0 40px  #01FE05, 0 0 50px  #01FE05, 0 0 60px  #01FE05, 0 0 70px #01FE05, 0 0 80px #01FE05;
         }
+
+
 }
 
 
 .hidden {
     display: none;
+
 }

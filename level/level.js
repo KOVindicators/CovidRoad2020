@@ -12,7 +12,6 @@ const currentLevel = findById(levelId, levels);
 const bigDivEl = document.createElement('div');
 const headerEl = document.querySelector('header');
 const { ulLeftEl, ulCenterEl, ulRightEl } = renderHeader(user);
-
 headerEl.append(ulLeftEl, ulCenterEl, ulRightEl);
 
 if (rando()) {
@@ -77,11 +76,21 @@ form.addEventListener('submit', (e) => {
     const resultSection = document.createElement('section');
     const resultDiv = document.createElement('div');
     resultDiv.textContent = result.description;
+    const tooltipEl = document.createElement('div');
+    tooltipEl.classList.add('tooltip');
+    const spanEl = document.createElement('span');
+    spanEl.classList.add('tooltiptext');
     const aEl = document.createElement('a');
-    aEl.classList.add('glow');
-    aEl.textContent = 'For more info, visit: ' + result.url;
-    aEl.href = result.url;
-    resultSection.append(resultDiv, aEl);
+    
+    aEl.textContent = 'More Info Here';
+    aEl.href = result.url
+    aEl.target = '_blank';
+    tooltipEl.textContent = 'Covid Information ';
+    
+    spanEl.textContent = result.info;
+    spanEl.append(aEl);
+    tooltipEl.append(spanEl);
+    resultSection.append(resultDiv, tooltipEl);
     bigDivEl.append(resultSection);
     user.completed[currentLevel.id] = true;
     
