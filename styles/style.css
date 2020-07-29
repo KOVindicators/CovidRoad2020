@@ -115,7 +115,9 @@ a:visited {
     
     
 }
-
+#level-avatar {
+    width: 60px;
+}
 .scene{
     border: 2px #01FE05 dotted;
 

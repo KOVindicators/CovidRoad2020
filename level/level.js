@@ -4,26 +4,21 @@ import occupations from '../data/occupations.js';
 
 const user = getUser();
 const avatarImage = findById(user.occupation, occupations).avatar;
-
+const params = new URLSearchParams(window.location.search);
+const levelId = params.get('id');
+const currentLevel = findById(levelId, levels);
 
 const main = document.querySelector('main');
-const currentLevel = levels[0];
 const bigDivEl = document.createElement('div');
 const levelName = document.createElement('h2');
 levelName.textContent = levels[0].title;
-
 const imageBox = document.createElement('section');
 imageBox.classList.add('image-box');
 imageBox.style.backgroundImage = `url(../assets/${currentLevel.picture})`;
-
 const avatarEl = document.createElement('img');
-avatarEl.id = 'avatar';
+avatarEl.id = 'level-avatar';
 avatarEl.src = `../assets/${avatarImage}`;
-
-
 imageBox.append(avatarEl);
-//bigDivEl.append(imageBox);
-
 const mainSectionEl = document.createElement('section');
 mainSectionEl.classList.add('main-section');
 const descriptionEl = document.createElement('div');
@@ -31,6 +26,7 @@ descriptionEl.classList.add('scene');
 descriptionEl.textContent = currentLevel.description;
 const formEl = document.createElement('form'); 
 const labelDivEl = document.createElement('div');
+
 currentLevel.choices.forEach(choice => {
     const labelEl = document.createElement('label');
     labelEl.classList.add('glow');
@@ -49,11 +45,10 @@ buttonEl.type = 'submit';
 formEl.append(labelDivEl, buttonEl);
 mainSectionEl.append(descriptionEl, formEl);
 bigDivEl.append(levelName, imageBox, mainSectionEl);
-
-
 main.append(bigDivEl);
-const form = document.querySelector('form');
 
+
+const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(form);
@@ -63,21 +58,32 @@ form.addEventListener('submit', (e) => {
     user.wealth += result.wealth;
     const resultSection = document.createElement('section');
     const resultDiv = document.createElement('div');
-
     resultDiv.textContent = result.description;
-
     const aEl = document.createElement('a');
     aEl.classList.add('glow');
     aEl.textContent = 'For more info, visit: ' + result.url;
     aEl.href = result.url;
-
     resultSection.append(resultDiv, aEl);
     bigDivEl.append(resultSection);
+    user.completed[currentLevel.id] = true;
+    
 
     setUser(user);
-   // const nextButton = document.createElement('button');
+  
 
+    const nextButton = document.createElement('button');
+    nextButton.textContent = 'NEXT';
+    nextButton.classList.add('glow');
+    resultSection.append(nextButton);
     
+    nextButton.addEventListener('click', () => {
+        if (currentLevel.nextLevel === 'end' || user.health <= 0){
+            window.location = '../results';
+        } else {
+            window.location = `../level/?id=${currentLevel.nextLevel}`;
+        }
+    });
+
 
 }); 
    
@@ -87,7 +93,7 @@ form.addEventListener('submit', (e) => {
 
    
 
- // window.location = '../level';
+
 
 
   
