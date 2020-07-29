@@ -52,23 +52,3 @@ bigDivEl.append(levelName, imageBox, mainSectionEl);
 
 
 main.append(bigDivEl);
-//     <div class="scene">set the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the sceneset the scene</div>
-//     <form>
-//         <div>
-//         <label class="glow"> 1. choice 1
-//             <input type="radio" name="choice" id="choice1">
-//         </label>
-//         <label class="glow"> 2. choice 2
-//             <input type="radio" name="choice" id="choice2">
-//         </label>
-//         <label class="glow"> 3. choice 3 extra text and shit
-        
-//             <input type="radio" name="choice" id="choice3">
-//         </label>
-//         </div>
-//         <button class="glow" type="submit">SUBMIT</button>
-//     </form>
-// </section>
-
-
-// </main>
