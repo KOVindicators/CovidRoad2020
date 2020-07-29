@@ -16,7 +16,7 @@ export function renderStartPage(occupationList) {
     mainSectionEl.classList.add('main-section');
     //TODO select random image
     const startImgEl = document.createElement('img');
-    startImgEl.src = 'https://covid-19archive.org/files/large/e265d1d5cdc41f348959af6faf7d92492d278190.jpg';
+    startImgEl.src = '../assets/logo.jpg';
     startImgEl.classList.add('start-image');
 
     const formEl = document.createElement('form');
