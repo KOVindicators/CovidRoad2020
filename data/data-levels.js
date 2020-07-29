@@ -29,7 +29,7 @@ const store = {
         id: 'choice3',
         description: 'Choose choice 3',
         result: {
-            health: 10,
+            health: -100,
             wealth: 10,
             description: 'Healthy and wealthy, wise choice.',
             url: 'http://www.cdc.gov'
@@ -49,7 +49,7 @@ const work = {
         description: 'Choose choice 1',
         
         result: {
-            health: -5,
+            health: 10,
             wealth: 10,
             description: 'You lost some health but made money, hope it was worth it.',
             url: 'http://www.cdc.gov'
@@ -69,7 +69,7 @@ const work = {
         id: 'choice3',
         description: 'Choose choice 3',
         result: {
-            health: 10,
+            health: -100,
             wealth: 10,
             description: 'Healthy and wealthy, wise choice.',
             url: 'http://www.cdc.gov'
