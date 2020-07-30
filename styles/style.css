@@ -236,7 +236,7 @@ button {
 }
 
 .result-image {
-    background-size: 67%;
+    background-size: 68%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -297,4 +297,74 @@ p {
     align-items: center;
 }
 
+#result-section {
+    margin-bottom: 20px;
+}
 
+.dancehall {
+    
+}
+
+ 
+.tiny-dancer {
+    margin-bottom: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    animation: jump 1.2s infinite;
+}
+
+@keyframes jump {
+    0% { transform: translate(-50%, -50%) scale(1.25, 0.75);}
+    50% { transform: translate(-50%, -150%) scale(1, 1);}
+    55% { transform: translate(-50%, -150%) rotate(15deg); }
+    60% { transform: translate(-50%, -150%) rotate(-15deg); }
+    65% { transform: translate(-50%, -150%) rotate(15deg); }
+    70% { transform: translate(-50%, -150%) rotate(-15deg); }
+    100% { transform: translate(-50%, -50%) scale(1.25, 0.75); }
+}
+
+.fall-dead {
+    
+    position: relative; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-75%, -75%);  
+    animation: bouncing 5s infinite;
+    
+
+}
+
+@-webkit-keyframes bouncing {
+    40%, 70%, 90% {
+      bottom: 0;
+      -webkit-animation-timing-function: ease-out;
+    }
+    0% {
+      bottom: 200px;
+      left: 0;
+      -webkit-animation-timing-function: ease-in;
+    }
+    55% {
+      bottom: 50px;
+      -webkit-animation-timing-function: ease-in;
+    }
+    80% {
+      bottom: 25px;
+      -webkit-animation-timing-function: ease-in;
+    }
+    95% {
+      bottom: 10px;
+      -webkit-animation-timing-function: ease-out;
+    }
+    100% {
+      left: 125px;
+      bottom: 0;
+      -webkit-animation-timing-function: ease-out;
+    }
+     100% {
+         transform: rotate(-90deg); 
+    }
+}  
