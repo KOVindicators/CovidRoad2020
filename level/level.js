@@ -4,9 +4,11 @@ import { findById, getUser, setUser, getRandomEvent, rando } from '../utils.js';
 
 import { renderHeader, renderRandom } from '../render.js';
 
-const user = getUser();
-const avatarImage = findById(user.occupation, occupations).avatar;
 const params = new URLSearchParams(window.location.search);
+const userId = params.get('userId');
+const user = getUser(userId);
+const avatarImage = findById(user.occupation, occupations).avatar;
+
 const levelId = params.get('id');
 const currentLevel = findById(levelId, levels);
 const bigDivEl = document.createElement('div');
@@ -111,9 +113,9 @@ form.addEventListener('submit', (e) => {
     
     nextButton.addEventListener('click', () => {
         if (currentLevel.nextLevel === 'end' || user.health <= 0){
-            window.location = '../results';
+            window.location = `../results/?userId=${user.id}`;
         } else {
-            window.location = `../level/?id=${currentLevel.nextLevel}`;
+            window.location = `../level/?id=${currentLevel.nextLevel}&userId=${user.id}`;
         }
     });
 

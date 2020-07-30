@@ -2,7 +2,9 @@ import { renderHeader } from '../render.js';
 import { getUser } from '../utils.js';
 // import levels from '../data/levels.js';
 
-const user = getUser();
+const params = new URLSearchParams(window.location.search);
+const userId = params.get('userId');
+const user = getUser(userId);
 const headerEl = document.querySelector('header');
 const { ulLeftEl, ulCenterEl, ulRightEl } = renderHeader(user);
 headerEl.append(ulLeftEl, ulCenterEl, ulRightEl);
@@ -29,7 +31,7 @@ button.addEventListener('click', () => {
 
     window.location = '../start';
 
-    //restart with exhisting/ saved user data
+    //restart with existing/ saved user data
 
 });
 
@@ -38,13 +40,13 @@ button.addEventListener('click', () => {
     //You Survived! Congratuations! 
     //img w/ animation
     //cdc. link
-    //state info? oregon health depo. etc.
+    //state info? oregon health department. etc.
 
 // lose section 
     //You died of Covid-19
     //img w/ tombstone
     //cdc. link
-    //state info? oregon health depo. etc.
+    //state info? oregon health department. etc.
 
 
 
