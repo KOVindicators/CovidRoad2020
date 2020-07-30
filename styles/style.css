@@ -28,6 +28,7 @@ body {
 
 }
 
+
 header {
     height: 85px; 
     display: flex;
@@ -41,10 +42,7 @@ header {
     
     
 }
-/* 
-header ul {
-    width: 32%;
-} */
+
 
 main {
     display: flex;
@@ -189,11 +187,24 @@ button {
 
 
 .tooltip {
+    
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black;
+    border-style: groove;
+    border-width: 7px;
+    border-color: #01FE05;  
+    font-size: 20px;
+    color: #01FE05;
+    text-align: center;
+    animation: tooltip 1s ease-in-out infinite alternate;
+    
+    
   }
-.tooltip .tooltiptext {
+
+ .tooltiptext {
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
     visibility: hidden;
     width: 400px;
     background-color: white;
@@ -201,15 +212,16 @@ button {
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
-  
-    /* Position the tooltip */
     position: absolute;
     z-index: 1;
+    animation: tooltiptext 3s ease-in-out infinite alternate;
+    
   }
 
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
+  
 }
 
 .result-image {
@@ -225,7 +237,7 @@ button {
     margin: 20px;
 }
 
-@keyframes label {
+@keyframes label  {
     from {
         text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px  #01FE05, 0 0 40px  #01FE05, 0 0 50px  #01FE05, 0 0 60px  #01FE05, 0 0 70px  #01FE05;
         }
@@ -273,4 +285,23 @@ p {
     align-items: center;
 }
 
+ @keyframes tooltip {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #01FE05, 0 0 40px #01FE05, 0 0 50px #01FE05, 0 0 60px #01FE05, 0 0 70px #01FE05;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #44bdd3, 0 0 40px #44bdd3, 0 0 50px #44bdd3, 0 0 60px #44bdd3, 0 0 70px #44bdd3, 0 0 80px #44bdd3;
+    }
+  } 
+
+ 
+
+ @keyframes tooltiptext {
+    from {
+      text-shadow: 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff;
+    }
+    to {
+      text-shadow: 0 0 00px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff;
+    }
+  }   
 
