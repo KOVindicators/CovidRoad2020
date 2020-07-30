@@ -1,10 +1,10 @@
 const store = {
     id: 'store',
-    picture: 'freddies.png', //change to costco img
+    picture: 'store-pics/costco.png', //change to costco img
     title: 'Grocery Shopping',
     description: 
         "You need to make a supply run as you're currently stock of toilet paper is much too low! You get to the store and have to wait in line 6 ft. distanced with your mask (cause you value social responsibility and your part in it). There's an angry ignorant person yelling about without their mask on. What do you do?",
-    nextLevel: 'work',
+    nextLevel: 'store2',
     choices: [{
         id: 'choice1',
         description: 'Sit tight and keep your distance',
@@ -89,7 +89,7 @@ const work = {
 
     
 
-    nextLevel: 'bar',
+    nextLevel: 'work2',
     choices: [{
         id: 'choice1',
         description: 'Physically confront the customer',
@@ -130,8 +130,8 @@ const work = {
     ],
 };
 
-const work1 = {
-    id: 'work1',
+const work2 = {
+    id: 'work2',
     picture: 'mounthood.jpg', //img needs to change
     title: 'Going to work',
     description: 
@@ -179,7 +179,7 @@ const bar = {
     description: 'What a long day!  So much work, so much strife, so THIRSTY!!  A cold one and some company sounds like a way to cap off a nightmare of a day. You grab your mask and enter your favorite watering hole. Bellying up to the bar but right before you order, you hear the voice of your old coworker call your name.  You turn to find that they are at a table with a pitch of beer and an empty glass with your name on it.  What do you do?',
 
 
-    nextLevel: 'end',
+    nextLevel: 'bar2',
     choices: [{
         id: 'choice1',
         description: 'Sit at table and pour yourself a beer',
@@ -264,7 +264,7 @@ const bar2 = {
 };
 
 const levels = [
-    store, store2, work, work1, bar, bar2
+    store, store2, work, work2, bar, bar2
 ];
 export default levels;
 

@@ -232,3 +232,21 @@ button {
     display: none;
 
 }
+
+.intro {
+    border: 2px #01FE05 dotted;
+    font-size: 1em;
+}
+
+p {
+    margin: 20px;
+}
+
+.each {
+    border: 2px #01FE05 dotted;
+    font-size: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
