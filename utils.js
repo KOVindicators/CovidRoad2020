@@ -28,7 +28,7 @@ export function findById(id, array) {
 
 export function getUser(userId) {
     let foundPlayer = null;
-    const userList = JSON.parse(localStorage.getItem('PLAYERS'));
+    const userList = JSON.parse(localStorage.getItem('PLAYERS')) || [];
     for (let i = 0; i < userList.length; i++) {
         if (userList[i].id === userId) return userList[i];
     }

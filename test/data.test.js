@@ -78,7 +78,7 @@ test('testing our data-levels rendering', assert => {
                 wealth: -15,
                 description: 'What a waste of time and gas.',
                 url: 'https://youtu.be/nOa8wIhQdzo',
-                info:'Key Times to Practice Social Distancin: 1. Inside your home : when someone has, or things they have COVID-19. If possible stay at least 6 feet away. 2. Outside your home: Stay at least 6 feet away from people outside of your household in indoor/outdoor spaces. Stay out of crowded places if possible.'
+                info:'Key Times to Practice Social Distancing: 1. Inside your home : when someone has, or things they have COVID-19. If possible stay at least 6 feet away. 2. Outside your home: Stay at least 6 feet away from people outside of your household in indoor/outdoor spaces. Stay out of crowded places if possible.'
             } 
         }
         ],
