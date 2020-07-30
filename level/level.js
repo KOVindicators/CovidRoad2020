@@ -52,13 +52,21 @@ const labelDivEl = document.createElement('div');
 currentLevel.choices.forEach(choice => {
     const labelEl = document.createElement('label');
     labelEl.classList.add('glow');
-    labelEl.textContent = choice.description;
     const inputEl = document.createElement('input');
     inputEl.type = 'radio';
     inputEl.value = choice.id;
     inputEl.name = 'choice';
-    labelEl.append(inputEl);
+    inputEl.classList.add('check-input');
+    inputEl.style.visibility = 'hidden';
+    const imgEl = document.createElement('div');
+    //imgEl.src = '';
+    imgEl.classList.add('checkmark');
+   // imgEl.style.visibility = 'hidden';
+    labelEl.textContent = choice.description;
     labelDivEl.append(labelEl);
+    labelEl.append(inputEl);
+    labelEl.append(imgEl);
+    
 });
 const buttonEl = document.createElement('button');
 buttonEl.classList.add('glow');

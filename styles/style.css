@@ -165,8 +165,31 @@ label{
 
 }
 
-input:checked + label {
-    animation: label 1s ease-in-out infinite alternate;
+.glow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkmark {
+   height: 50px;
+   
+}
+
+input:checked + .checkmark {
+    visibility: visible;
+}
+
+.checkmark {
+    background-image: url('../assets/checkmark.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: solid 4px #01FE05;
+    visibility: hidden;
+    
+    
 }
 
 form {
@@ -213,11 +236,12 @@ button {
 }
 
 .result-image {
-    background-size: 50%;
+    background-size: 67%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     font-size: 1em;
+    margin-top: 60px;
     
 }
 
