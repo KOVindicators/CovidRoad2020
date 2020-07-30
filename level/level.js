@@ -86,13 +86,15 @@ form.addEventListener('submit', (e) => {
     tooltipEl.classList.add('tooltip');
     const spanEl = document.createElement('span');
     spanEl.classList.add('tooltiptext');
-    const aEl = document.createElement('a');
     
+    
+    
+    
+    const aEl = document.createElement('a');
     aEl.textContent = 'More Info Here';
     aEl.href = result.url;
     aEl.target = '_blank';
-    tooltipEl.textContent = 'Covid Information ';
-    
+    tooltipEl.textContent = 'MORE INFORMATION ';
     spanEl.textContent = result.info;
     spanEl.append(aEl);
     tooltipEl.append(spanEl);
