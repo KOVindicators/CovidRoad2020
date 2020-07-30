@@ -1,5 +1,5 @@
 //EXPORT FUNCTIONS
-import { findById } from './utils.js';
+import { findById, setUser } from './utils.js';
 import occupations from './data/occupations.js';
 import levels from './data/data-levels.js';
 
@@ -105,11 +105,12 @@ export function renderHeader(user) {
     return { ulLeftEl, ulCenterEl, ulRightEl };
 }
 
-export function renderRandom(event) {
+export function renderRandom(event, user) {
     const sectionEl = document.createElement('section');
     sectionEl.id = 'eventPopup';
     sectionEl.classList.add('popup');
-
+    user.health += event.health;
+    user.wealth += event.wealth;
     const titleEl = document.createElement('h2');
     titleEl.textContent = event.title;
     
@@ -134,8 +135,13 @@ export function renderRandom(event) {
     continueButtonEl.textContent = 'Next';
     continueButtonEl.classList.add('glow');
     continueButtonEl.addEventListener('click', () => {
+        setUser(user);
+
         const eventPopup = document.querySelector('#eventPopup');
         eventPopup.classList.toggle('hidden');
+        if (user.health <= 0){
+            window.location = `../results/?userId=${user.id}`;
+        }
     });
 
     sectionEl.append(titleEl, descriptionEl, resultDivH, resultDivW, continueButtonEl);
