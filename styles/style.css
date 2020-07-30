@@ -86,8 +86,9 @@ footer{
     margin: 30px;
 }
 
-a:visited {
+a, a:visited {
     color: var(--color1);
+    cursor: pointer;
 
 
 }
@@ -164,6 +165,10 @@ label{
 
 }
 
+input:checked + label {
+    animation: label 1s ease-in-out infinite alternate;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -173,7 +178,7 @@ form {
 button {     
     margin: 20px;
     padding: 5px;
-    
+    cursor: pointer;
     font-size: 20px;
     font-family: 'Press Start 2P';
     background-color: darkslategray;    
