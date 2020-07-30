@@ -13,7 +13,7 @@ const imageBox = document.querySelector('.image-box');
 imageBox.classList.add('result-image');
 const h2 = document.querySelector('.result-message');
 const button = document.getElementById('restart-button');
-
+//const danceFloor = document.querySelector('#dancehall'); this will be used for dancing avatar
 
 if (user.health <= 0) {
     imageBox.style.backgroundImage = 'url(../assets/gravestone.png)';
