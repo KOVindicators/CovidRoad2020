@@ -1,5 +1,6 @@
 import { renderHeader } from '../render.js';
-import { getUser } from '../utils.js';
+import { getUser, findById } from '../utils.js';
+import occupations from '../data/occupations.js';
 // import levels from '../data/levels.js';
 
 const params = new URLSearchParams(window.location.search);
@@ -15,15 +16,22 @@ const imageBox = document.querySelector('.image-box');
 imageBox.classList.add('result-image');
 const h2 = document.querySelector('.result-message');
 const button = document.getElementById('restart-button');
-//const danceFloor = document.querySelector('#dancehall'); this will be used for dancing avatar
+const danceFloor = document.querySelector('.dancehall');
+const avatarImage = findById(user.occupation, occupations).avatar;
+const avatarEl = document.createElement('img'); 
+avatarEl.src = `../assets/${avatarImage}`;
+danceFloor.append(avatarEl);
+avatarEl.id = 'tiny-dancer';
 
 if (user.health <= 0) {
     imageBox.style.backgroundImage = 'url(../assets/gravestone.png)';
     imageBox.textContent = `RIP ${user.name}`;
     h2.textContent = `${user.name} contracted Covid and died.`;
+    avatarEl.classList.add('fall-dead');
 } else {
     imageBox.style.backgroundImage = 'url(../assets/trophy.png)';
     h2.textContent = `${user.name} Survived! Congratuations!`;
+    avatarEl.classList.add('tiny-dancer');
 }
 
 button.addEventListener('click', () => {

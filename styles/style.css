@@ -150,8 +150,7 @@ a, a:visited {
 }
 
 label{
-    padding: 10px;
-    display: block;
+    display: flex;
     font-size: 20px;
 }
 
@@ -163,8 +162,31 @@ label{
 
 }
 
-input:checked + label {
-    animation: label 1s ease-in-out infinite alternate;
+.glow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkmark {
+   height: 50px;
+   
+}
+
+input:checked + .checkmark {
+    visibility: visible;
+}
+
+.checkmark {
+    background-image: url('../assets/checkmark.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: solid 4px #01FE05;
+    visibility: hidden;
+    
+    
 }
 
 form {
@@ -225,16 +247,23 @@ button {
 }
 
 .result-image {
-    background-size: 50%;
+    background-size: 68%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     font-size: 1em;
+    margin-top: 60px;
+    padding-left: 250px;
+    padding-right: 265px;
+    padding-bottom: 220px;
     
 }
 
 .result-message {
     margin: 20px;
+   
 }
 
 @keyframes label  {
@@ -285,6 +314,46 @@ p {
     align-items: center;
 }
 
+
+#result-section {
+    margin-bottom: 20px;
+}
+
+.dancehall {
+    
+}
+
+ 
+.tiny-dancer {
+    margin-bottom: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    animation: jump 1.2s infinite;
+}
+
+@keyframes jump {
+    0% { transform: translate(-50%, -50%) scale(1.25, 0.75);}
+    50% { transform: translate(-50%, -150%) scale(1, 1);}
+    55% { transform: translate(-50%, -150%) rotate(15deg); }
+    60% { transform: translate(-50%, -150%) rotate(-15deg); }
+    65% { transform: translate(-50%, -150%) rotate(15deg); }
+    70% { transform: translate(-50%, -150%) rotate(-15deg); }
+    100% { transform: translate(-50%, -50%) scale(1.25, 0.75); }
+}
+
+.fall-dead {
+    margin-bottom: 200px;
+    position: relative; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-75%, -75%);  
+    animation: bouncing 5s infinite;
+    
+
+}
  @keyframes tooltip {
     from {
       text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #01FE05, 0 0 40px #01FE05, 0 0 50px #01FE05, 0 0 60px #01FE05, 0 0 70px #01FE05;
@@ -303,5 +372,36 @@ p {
     to {
       text-shadow: 0 0 00px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff;
     }
-  }   
+  }  
 
+@-webkit-keyframes bouncing {
+    40%, 70%, 90% {
+      bottom: 0;
+      -webkit-animation-timing-function: ease-out;
+    }
+    0% {
+      bottom: 200px;
+      left: 0;
+      -webkit-animation-timing-function: ease-in;
+    }
+    55% {
+      bottom: 50px;
+      -webkit-animation-timing-function: ease-in;
+    }
+    80% {
+      bottom: 25px;
+      -webkit-animation-timing-function: ease-in;
+    }
+    95% {
+      bottom: 10px;
+      -webkit-animation-timing-function: ease-out;
+    }
+    100% {
+      left: 125px;
+      bottom: 0;
+      -webkit-animation-timing-function: ease-out;
+    }
+     100% {
+         transform: rotate(-90deg); 
+    }
+}  
