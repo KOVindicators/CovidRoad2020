@@ -59,9 +59,7 @@ currentLevel.choices.forEach(choice => {
     inputEl.classList.add('check-input');
     inputEl.style.visibility = 'hidden';
     const imgEl = document.createElement('div');
-    //imgEl.src = '';
     imgEl.classList.add('checkmark');
-   // imgEl.style.visibility = 'hidden';
     labelEl.textContent = choice.description;
     labelDivEl.append(labelEl);
     labelEl.append(inputEl);
