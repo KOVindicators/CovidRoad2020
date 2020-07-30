@@ -62,13 +62,13 @@ const carePackage = {
     wealth: 100
 };
 
-const aliens = {
+/*const aliens = {
     id: 'aliens',
     title: 'A flying saucer abducts you',
     description: 'Under the madness of Covid 2020  you question everything in life. In this moment some aliens passing by notice and abduct you. Good bye humanity! Now you are dead to the world.',
     health: -1000000,
     wealth: -1000000
-};
+};*/
 
 
 const events = [
@@ -80,7 +80,7 @@ const events = [
     shittyRoommate,
     busStop,
     carePackage,
-    aliens
+    //aliens
 ];
 
 
