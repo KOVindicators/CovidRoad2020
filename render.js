@@ -96,7 +96,9 @@ export function renderHeader(user) {
     const ulRightEl = document.createElement('ul');
     const liMoneyEl = document.createElement('li');
     const liHealthEl = document.createElement('li');
-    liMoneyEl.textContent = `Money: ${user.wealth}`;
+    liMoneyEl.id = 'wealth';
+    liHealthEl.id = 'health';
+    liMoneyEl.textContent = `Money: $${user.wealth}`;
     liHealthEl.textContent = `Health: ${user.health}`;
     ulRightEl.append(liMoneyEl, liHealthEl);
     return { ulLeftEl, ulCenterEl, ulRightEl };
@@ -113,6 +115,20 @@ export function renderRandom(event) {
     const descriptionEl = document.createElement('div');
     descriptionEl.textContent = event.description;
 
+    const resultDivH = document.createElement('div');
+    const resultDivW = document.createElement('div');
+    if (event.health > 0) {
+        resultDivH.textContent = `You have gained ${event.health} health!`;
+    } else if (event.health < 0) {
+        resultDivH.textContent = `You have lost ${Math.abs(event.health)} health!`; 
+    }
+    if (event.wealth > 0) {
+        resultDivW.textContent = `You have gained $${event.wealth}!`;
+    } else if (event.wealth < 0) {
+        resultDivW.textContent = `You have lost $${Math.abs(event.wealth)}!`;
+    }
+    
+
     const continueButtonEl = document.createElement('button');
     continueButtonEl.textContent = 'Next';
     continueButtonEl.classList.add('glow');
@@ -121,6 +137,6 @@ export function renderRandom(event) {
         eventPopup.classList.toggle('hidden');
     });
 
-    sectionEl.append(titleEl, descriptionEl, continueButtonEl);
+    sectionEl.append(titleEl, descriptionEl, resultDivH, resultDivW, continueButtonEl);
     return sectionEl;
 }

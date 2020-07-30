@@ -11,21 +11,26 @@ const levelId = params.get('id');
 const currentLevel = findById(levelId, levels);
 const bigDivEl = document.createElement('div');
 const headerEl = document.querySelector('header');
+const main = document.querySelector('main');
 const { ulLeftEl, ulCenterEl, ulRightEl } = renderHeader(user);
+bigDivEl.classList.add('bigDiv');
 headerEl.append(ulLeftEl, ulCenterEl, ulRightEl);
 
 if (rando()) {
     const event = getRandomEvent();
     const eventSectionEl = renderRandom(event);
+    const healthEl = document.getElementById('health');
+    const wealthEl = document.getElementById('wealth');
     user.health += event.health;
     user.wealth += event.wealth;
-    bigDivEl.append(eventSectionEl);
+    healthEl.textContent = `Health: ${user.health}`;
+    wealthEl.textContent = `Money: $${user.wealth}`;
+    main.append(eventSectionEl);
 
 }
 
 
 
-const main = document.querySelector('main');
 
 const levelName = document.createElement('h2');
 levelName.textContent = currentLevel.title;
@@ -74,6 +79,7 @@ form.addEventListener('submit', (e) => {
     user.health += result.health;
     user.wealth += result.wealth;
     const resultSection = document.createElement('section');
+    resultSection.classList.add('popup');
     const resultDiv = document.createElement('div');
     resultDiv.textContent = result.description;
     const tooltipEl = document.createElement('div');
@@ -91,7 +97,7 @@ form.addEventListener('submit', (e) => {
     spanEl.append(aEl);
     tooltipEl.append(spanEl);
     resultSection.append(resultDiv, tooltipEl);
-    bigDivEl.append(resultSection);
+    main.append(resultSection);
     user.completed[currentLevel.id] = true;
     
 

@@ -29,12 +29,17 @@ body {
 }
 
 header {
-    height: 85px;
+    height: 85px; 
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: darkslategray;
     padding: 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+    
+    
 }
 /* 
 header ul {
@@ -232,3 +237,35 @@ button {
     display: none;
 
 }
+
+.intro {
+    border: 2px #01FE05 dotted;
+    font-size: 1em;
+}
+
+p {
+    margin: 20px;
+}
+
+.each {
+    border: 2px #01FE05 dotted;
+    font-size: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.popup {
+    z-index: 100;
+    border: solid crimson 5px;
+    position: absolute;
+}
+
+.bigDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
