@@ -11,7 +11,7 @@ import levels from './data/data-levels.js';
 // RENDER FINAL RESULTS - Part 1 - WINNER
 // RENDER FINAL RESULTS - Part 2 - LOSER
 
-export function renderStartPage(occupationList) {
+export function renderStartPage(occupationList, userId) {
     const mainSectionEl = document.createElement('section');
     mainSectionEl.classList.add('main-section');
     //TODO select random image
@@ -39,6 +39,7 @@ export function renderStartPage(occupationList) {
     const emailInput = document.createElement('input');
     emailInput.name = 'email';
     emailInput.type = 'email';
+    emailInput.value = userId;
     emailLabelEl.append(emailInput);
     formEl.append(nameLabelEl, ageLabelEl, emailLabelEl);
     occupationList.forEach(occupation => {

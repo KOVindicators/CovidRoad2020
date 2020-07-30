@@ -3,7 +3,8 @@ import { generateRandomOccupations, findById, setUser } from '../utils.js';
 import { renderStartPage } from '../render.js';
 import occupations from '../data/occupations.js';
 const mainEl = document.querySelector('main');
-
+const params = new URLSearchParams(window.location.search);
+const userId = params.get('userId');
 // initialize state
 
 // set event listeners to update state and DOM
@@ -13,13 +14,13 @@ const occupationList = generateRandomOccupations();
 const descriptionEl = document.createElement('section');
 descriptionEl.textContent = 'Enter your name, age, and choose an occupation';
 
-const mainSectionEl = renderStartPage(occupationList);
+const mainSectionEl = renderStartPage(occupationList, userId);
 
 
 mainEl.append(descriptionEl, mainSectionEl);
 
 const form = document.querySelector('form');
-//console.log(form, 'hello');
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(form);
@@ -31,7 +32,7 @@ form.addEventListener('submit', (e) => {
     const user = {
         name: name,
         occupation: occupationId,
-        email: email,
+        id: email,
         age: age,
         health: occupation.health,
         wealth: occupation.wealth,
@@ -39,7 +40,7 @@ form.addEventListener('submit', (e) => {
     };
 
     setUser(user);
-    window.location = '../level/?id=store';
+    window.location = `../level/?id=store&userId=${user.id}`;
     
 });
 

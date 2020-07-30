@@ -26,13 +26,29 @@ export function findById(id, array) {
     return foundItem;
 }
 
-export function getUser() {
-    return JSON.parse(localStorage.getItem('PLAYER'));
+export function getUser(userId) {
+    let foundPlayer = null;
+    const userList = JSON.parse(localStorage.getItem('PLAYERS'));
+    for (let i = 0; i < userList.length; i++) {
+        if (userList[i].id === userId) return userList[i];
+    }
+    return foundPlayer;
 }
 
-export function setUser(player) {
-    const stringyPlayer = JSON.stringify(player);
-    localStorage.setItem('PLAYER', stringyPlayer);
+export function setUser(user) {
+    const userArray = JSON.parse(localStorage.getItem('PLAYERS')) || [];
+    if (findById(user.id, userArray)) {
+        for (let i = 0; i < userArray.length;i++) {
+            if (user.id === userArray[i].id) {
+                userArray[i] = user;
+            }
+        }
+    } else {
+        userArray.push(user);
+    }
+     
+    const stringifiedPlayers = JSON.stringify(userArray);
+    localStorage.setItem('PLAYERS', stringifiedPlayers);
 } 
 
 export function rando() {
