@@ -9,6 +9,9 @@ const userId = params.get('userId');
 const user = getUser(userId);
 const avatarImage = findById(user.occupation, occupations).avatar;
 
+
+
+
 const levelId = params.get('id');
 const currentLevel = findById(levelId, levels);
 const bigDivEl = document.createElement('div');
@@ -28,7 +31,7 @@ if (rando()) {
     healthEl.textContent = `Health: ${user.health}`;
     wealthEl.textContent = `Money: $${user.wealth}`;
     main.append(eventSectionEl);
-
+    
 }
 
 
