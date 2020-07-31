@@ -22,6 +22,7 @@ body {
     font-family: 'Press Start 2P', cursive;
     background-color: black;
     color: #01FE05;
+    line-height: 1.5;
 }
 .avatar-image {
     width: 60px;
@@ -307,6 +308,7 @@ p {
     z-index: 100;
     border: solid crimson 5px;
     position: absolute;
+    top: 15%
 }
 
 .bigDiv {
@@ -349,10 +351,10 @@ p {
 .fall-dead {
     margin-bottom: 200px;
     position: relative; 
-    top: 100%;  
+    top: 10%;  
     left: 50%;
     bottom: 100%; 
-    transform: translate(-75%, -75%);  
+    transform: translate(-75%, -300%);  
     animation: bouncing 5s infinite;
     
 

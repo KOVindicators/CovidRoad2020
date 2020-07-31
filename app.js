@@ -11,7 +11,7 @@ const mainEl = document.querySelector('main');
 formEl.addEventListener('submit', (e) => {
     e.preventDefault();
     const myFormData = new FormData(formEl);
-    
+    window.scrollTo(0, 0);
     const emailAddress = myFormData.get('email');
     const user = getUser(emailAddress);
     if (user) {
