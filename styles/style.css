@@ -169,6 +169,7 @@ label{
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    margin: 20px;
 }
 
 .checkmark {
@@ -331,7 +332,7 @@ p {
 .tiny-dancer {
     margin-bottom: 200px;
     position: absolute;
-    top: 50%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 32px;
@@ -349,11 +350,11 @@ p {
 }
 
 .fall-dead {
-    margin-bottom: 200px;
+    margin-bottom: 1000px;
     position: relative; 
     top: 10%;  
     left: 50%;
-    bottom: 100%; 
+    bottom: 10%; 
     transform: translate(-75%, -300%);  
     animation: bouncing 5s infinite;
     
@@ -381,41 +382,55 @@ p {
 
 @-webkit-keyframes bouncing { 
     40%, 70%, 90% {
-      bottom: 0;
+      bottom: 0em;
       -webkit-animation-timing-function: ease-out;
     }
     0% {
-      bottom: 600px;
+      bottom: 700px;
       left: 0;
       -webkit-animation-timing-function: ease-in;
     }
     55% {
-      bottom: 200px;
+      bottom: 650px;
       -webkit-animation-timing-function: ease-in;
     }
     80% {
-      bottom: 175px;
+      bottom: 600px;
       -webkit-animation-timing-function: ease-in;
     }
     95% {
-      bottom: 125px;
+      bottom: 525px;
       -webkit-animation-timing-function: ease-out;
     }
     100% {
       left: 125px;
-      bottom: 100;
+      bottom: 475px;
       -webkit-animation-timing-function: ease-out;
     }
      100% {
-         transform: rotate(-90deg); 
+         transform: rotate(-180deg); 
     }
 }  
 
 .about-that-body {
-    margin-top: 100px;
+    margin-top: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+.about-section {
+    margin-top: 200px;
+}
 
+.link-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.link:hover {
+    color: #fff;
+    animation: label 1s ease-in-out infinite alternate;
+}
