@@ -29,12 +29,14 @@ if (rando()) {
     wealthEl.textContent = `Money: $${user.wealth}`;
     main.append(eventSectionEl);
 }
-
-const audio = document.createElement('audio');
-audio.id = 'random-event-sound';
-audio.src = '../assets/sound-folder/opening-covid2020.mp3';
-audio.autoplay = true;
-audio.type = 'audio/ogg';
+if (levelId === 'store'){
+    const audio = document.createElement('audio');
+    audio.id = 'opening-sound';
+    audio.src = '../assets/sound-folder/opening-covid2020.mp3';
+    audio.autoplay = true;
+    audio.type = 'audio/ogg';
+}
+    
 
 const levelName = document.createElement('h2');
 levelName.textContent = currentLevel.title;
