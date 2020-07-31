@@ -380,7 +380,7 @@ p {
     }
   }  
 
-@-webkit-keyframes bouncing { 
+@keyframes bouncing { 
     40%, 70%, 90% {
       bottom: 0em;
       -webkit-animation-timing-function: ease-out;
