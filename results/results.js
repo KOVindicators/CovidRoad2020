@@ -29,7 +29,7 @@ avatarEl.id = 'tiny-dancer';
 
 if (user.health <= 0) {
     imageBox.style.backgroundImage = 'url(../assets/gravestone.png)';
-    imageBox.textContent = `RIP ${user.name}`;
+    imageBox.textContent = `---- RIP ---- ${user.name}`;
     h2.textContent = `${user.name} contracted Covid and died.`;
     avatarEl.classList.add('fall-dead');
 } else {

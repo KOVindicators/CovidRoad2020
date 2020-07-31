@@ -12,7 +12,7 @@ const userId = params.get('userId');
 const occupationList = generateRandomOccupations();
 
 const descriptionEl = document.createElement('section');
-descriptionEl.textContent = 'Enter your name, age, and choose an occupation';
+descriptionEl.textContent = 'Enter your name, age, and choose an avatar';
 
 const mainSectionEl = renderStartPage(occupationList, userId);
 
