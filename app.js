@@ -30,6 +30,7 @@ formEl.addEventListener('submit', (e) => {
             
             user.health = findById(user.occupation, occupations).health;
             user.wealth = findById(user.occupation, occupations).wealth;
+            user.completed = {};
 
             setUser(user);
             window.location = `./level/?id=store&userId=${user.id}`;
