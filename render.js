@@ -129,6 +129,12 @@ export function renderRandom(event) {
         resultDivW.textContent = `You have lost $${Math.abs(event.wealth)}!`;
     }
     
+    const audio = document.createElement('audio');
+    audio.id = 'random-event-sound';
+    audio.src = '../assets/sound-folder/random-event-sound.mp3';
+    audio.autoplay = true;
+    audio.type = 'audio/ogg';
+    
 
     const continueButtonEl = document.createElement('button');
     continueButtonEl.textContent = 'Next';
@@ -138,6 +144,6 @@ export function renderRandom(event) {
         eventPopup.classList.toggle('hidden');
     });
 
-    sectionEl.append(titleEl, descriptionEl, resultDivH, resultDivW, continueButtonEl);
+    sectionEl.append(titleEl, descriptionEl, resultDivH, resultDivW, continueButtonEl, audio);
     return sectionEl;
 }

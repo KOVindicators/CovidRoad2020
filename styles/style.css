@@ -319,9 +319,9 @@ p {
     margin-bottom: 20px;
 }
 
-.dancehall {
+/* .dancehall {
     
-}
+} */
 
  
 .tiny-dancer {
@@ -405,3 +405,8 @@ p {
          transform: rotate(-90deg); 
     }
 }  
+
+/* #opening-sound {
+    display: none;
+
+} */
