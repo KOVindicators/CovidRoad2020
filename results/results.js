@@ -10,7 +10,11 @@ const headerEl = document.querySelector('header');
 const { ulLeftEl, ulCenterEl, ulRightEl } = renderHeader(user);
 headerEl.append(ulLeftEl, ulCenterEl, ulRightEl);
 
-
+const audio = document.createElement('audio');
+audio.id = 'random-event-sound';
+audio.src = '../assets/sound-folder/you-died-the-end.mp3';
+audio.autoplay = true;
+audio.type = 'audio/ogg';
 // const main = document.querySelector('main');
 const imageBox = document.querySelector('.image-box');
 imageBox.classList.add('result-image');
@@ -42,19 +46,4 @@ button.addEventListener('click', () => {
     //restart with existing/ saved user data
 
 });
-
-
-// win section
-    //You Survived! Congratuations! 
-    //img w/ animation
-    //cdc. link
-    //state info? oregon health department. etc.
-
-// lose section 
-    //You died of Covid-19
-    //img w/ tombstone
-    //cdc. link
-    //state info? oregon health department. etc.
-
-
 

@@ -379,7 +379,7 @@ p {
     }
   }  
 
-@-webkit-keyframes bouncing {
+@-webkit-keyframes bouncing { 
     40%, 70%, 90% {
       bottom: 0;
       -webkit-animation-timing-function: ease-out;
@@ -418,3 +418,4 @@ p {
     align-items: center;
     justify-content: center;
 }
+
