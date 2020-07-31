@@ -83,7 +83,7 @@ export function renderHeader(user) {
 
     const liImgEl = document.createElement('li');
     const liImg = document.createElement('img');
-    liImg.src = `../assets/${avatarImage}`;
+    user.health <= 0 ? liImg.src = '../assets/gravestone.png' : liImg.src = `../assets/${avatarImage}`;
     liImg.classList.add('avatar-image');
     liImgEl.append(liImg);
 

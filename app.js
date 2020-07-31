@@ -1,6 +1,6 @@
 // import functions and grab DOM elements
-import { getUser } from './utils.js';
-const enterButton = document.getElementById('enter');
+import occupations from './data/occupations.js';
+import { getUser, findById, setUser } from './utils.js';
 const formEl = document.querySelector('form');
 const mainEl = document.querySelector('main');
 // initialize state
@@ -18,20 +18,25 @@ formEl.addEventListener('submit', (e) => {
         const confirmEl = document.createElement('section');
         confirmEl.classList.add('popup');
 
-        const message = `Welcome back ${user.name}, would you like to continue with your existing character or create a new one?`;
+        const message = `Welcome back ${user.name}, would you like to play again with your existing character or create a new one?`;
         const messageEl = document.createElement('div');
         messageEl.textContent = message;
 
         const continueButtonEl = document.createElement('button');
-        continueButtonEl.textContent = 'Continue';
+        continueButtonEl.textContent = 'Same Character';
         continueButtonEl.classList.add('glow');
         continueButtonEl.id = 'continue';
         continueButtonEl.addEventListener('click', () => {
-            window.location = `./start/?userId=${emailAddress}`;
+            
+            user.health = findById(user.occupation, occupations).health;
+            user.wealth = findById(user.occupation, occupations).wealth;
+
+            setUser(user);
+            window.location = `./level/?id=store&userId=${user.id}`;
         });
 
         const restartButtonEl = document.createElement('button');
-        restartButtonEl.textContent = 'Restart';
+        restartButtonEl.textContent = 'New Character';
         restartButtonEl.classList.add('glow');
         restartButtonEl.addEventListener('click', () => {
             window.location = `./start`;
@@ -44,11 +49,7 @@ formEl.addEventListener('submit', (e) => {
 
     } else {
         window.location = `./start/?userId=${emailAddress}`;
+
     }
     
-});
-
-
-enterButton.addEventListener('click', () => {
-    window.location = './start';
 });
