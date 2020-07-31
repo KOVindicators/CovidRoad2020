@@ -12,7 +12,7 @@ const store = {
         result: {
             health: -5,
             wealth: -10,
-            description: 'You lost some health. Hope it was worth it.',
+            description: 'You maintain your distance and get your supplies. Small health lost due to possible exposure.',
             url: 'https://youtu.be/Xdd2M40Leb0',
             info: 'Social distancing means putting space between yourself and others. Everyone can help slow the spread of COVID-19'
         }  
