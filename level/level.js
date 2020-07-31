@@ -84,6 +84,7 @@ main.append(bigDivEl);
 const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    window.scrollTo(0, 0);
     const formData = new FormData(form);
     const choiceId = formData.get('choice');
     const result = findById(choiceId, currentLevel.choices).result;

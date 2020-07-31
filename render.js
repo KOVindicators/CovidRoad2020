@@ -1,5 +1,5 @@
 //EXPORT FUNCTIONS
-import { findById, setUser } from './utils.js';
+import { findById, setUser, getUser } from './utils.js';
 import occupations from './data/occupations.js';
 import levels from './data/data-levels.js';
 
@@ -15,6 +15,8 @@ export function renderStartPage(occupationList, userId) {
     const mainSectionEl = document.createElement('section');
     mainSectionEl.classList.add('main-section');
     //TODO select random image
+    const user = getUser(userId);
+
     const startImgEl = document.createElement('img');
     startImgEl.src = '../assets/logo.jpg';
     startImgEl.classList.add('start-image');
@@ -25,6 +27,7 @@ export function renderStartPage(occupationList, userId) {
     nameLabelEl.textContent = 'Name:';
     const nameInput = document.createElement('input');
     nameInput.name = 'name';
+    if (user) nameInput.value = user.name;
     nameLabelEl.append(nameInput);
 
     const ageLabelEl = document.createElement('label');
@@ -32,6 +35,7 @@ export function renderStartPage(occupationList, userId) {
     const ageInput = document.createElement('input');
     ageInput.name = 'age';
     ageInput.type = 'number';
+    if (user) ageInput.value = user.age;
     ageLabelEl.append(ageInput);
 
     const emailLabelEl = document.createElement('label');
