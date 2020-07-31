@@ -377,7 +377,7 @@ p {
     }
   }  
 
-@-webkit-keyframes bouncing {
+@-webkit-keyframes bouncing { 
     40%, 70%, 90% {
       bottom: 0;
       -webkit-animation-timing-function: ease-out;
@@ -409,7 +409,6 @@ p {
     }
 }  
 
-<<<<<<< HEAD
 .about-that-body {
     margin-top: 100px;
     display: flex;
@@ -417,9 +416,4 @@ p {
     align-items: center;
     justify-content: center;
 }
-=======
-/* #opening-sound {
-    display: none;
 
-} */
->>>>>>> 46bf9aad0ae4d9e878dab583dc080ccb3c6ac55f
