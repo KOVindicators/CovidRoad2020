@@ -29,7 +29,7 @@ if (rando()) {
     wealthEl.textContent = `Money: $${user.wealth}`;
     main.append(eventSectionEl);
 }
-if(levelId === 'store'){
+if (levelId === 'store'){
     const audio = document.createElement('audio');
     audio.id = 'opening-sound';
     audio.src = '../assets/sound-folder/opening-covid2020.mp3';
