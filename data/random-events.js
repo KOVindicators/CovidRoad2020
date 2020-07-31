@@ -41,7 +41,7 @@ const eviction = {
 const shittyRoommate = {
     id: 'shittyRoommate',
     title: 'Shitty Roommate',
-    description: 'Your roommate comes home with a fever and the runs. ${user.name} too contract dysentery. ',
+    description: 'Your roommate comes home with a fever and the runs. You contract dysentery. ',
     health: -50,
     wealth: 0
 };
@@ -49,7 +49,7 @@ const shittyRoommate = {
 const busStop = {
     id: 'busStop',
     title: 'Waiting at the bus stop',
-    description: 'While waiting at the bus stop the person next to you (unfortunately not wearing a mask or caring to cover) sneazes as you sit downwind. You are hit with a cloud of germified mist. You contract Covid',
+    description: 'While waiting at the bus stop the person next to you (unfortunately not wearing a mask or caring to cover) sneezes as you sit downwind. You are hit with a cloud of germified mist. You contract Covid',
     health: -75,
     wealth: -20
 };
