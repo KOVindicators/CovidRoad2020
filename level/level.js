@@ -23,11 +23,11 @@ headerEl.append(ulLeftEl, ulCenterEl, ulRightEl);
 
 if (rando()) {
     const event = getRandomEvent();
-    const eventSectionEl = renderRandom(event);
+    const eventSectionEl = renderRandom(event, user);
+
     const healthEl = document.getElementById('health');
     const wealthEl = document.getElementById('wealth');
-    user.health += event.health;
-    user.wealth += event.wealth;
+   
     healthEl.textContent = `Health: ${user.health}`;
     wealthEl.textContent = `Money: $${user.wealth}`;
     main.append(eventSectionEl);
