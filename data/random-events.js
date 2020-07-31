@@ -17,7 +17,7 @@ const protesting = {
 const noMask = {
     id: 'nomask',
     title: 'Unmasked person coughs on you',
-    description: 'You have just walked out the door and a neighbor who is not wearing a mask  ',
+    description: 'You have just walked out the door and a neighbor who is not wearing a mask coughs on you ',
     health: -50,
     wealth: 0
 };

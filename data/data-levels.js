@@ -11,8 +11,8 @@ const store = {
         
         result: {
             health: -5,
-            wealth: 10,
-            description: 'You lost some health but made some money. Hope it was worth it.',
+            wealth: -10,
+            description: 'You lost some health. Hope it was worth it.',
             url: 'https://youtu.be/Xdd2M40Leb0',
             info: 'Social distancing means putting space between yourself and others. Everyone can help slow the spread of COVID-19'
         }  
@@ -21,7 +21,7 @@ const store = {
         id: 'choice2',
         description: 'Cry out "CHALLENGE ACCEPTED!" You ready to fight',
         result: {
-            health: 10,
+            health: -20,
             wealth: -10,
             description: 'Violence is never the answer. What or how could you have done better?',
             url: 'https://orncc.net',
@@ -33,7 +33,7 @@ const store = {
         description: 'You quietly slip away unnoticed, avoiding conflict and your groceries all together.',
         result: {
             health: -10,
-            wealth: -15,
+            wealth: 0,
             description: 'What a waste of time and gas.',
             url: 'https://youtu.be/nOa8wIhQdzo',
             info:'Key Times to Practice Social Distancing: 1. Inside your home : when someone has, or things they have COVID-19. If possible stay at least 6 feet away. 2. Outside your home: Stay at least 6 feet away from people outside of your household in indoor/outdoor spaces. Stay out of crowded places if possible.'
@@ -51,11 +51,11 @@ const store2 = {
     nextLevel: 'work',
     choices: [{
         id: 'choice1',
-        description: 'Sit tight and keep your distance',
+        description: 'Calmly proceed to checkout, keeping your distance from irate person.',
         result: {
             health: -5,
-            wealth: 10,
-            description: 'You lost some health but made money, hope it was worth it.',
+            wealth: -20,
+            description: 'You got your toilet paper and avoided conflict.',
             url: 'https://www.cdc.gov/coronavirus/2019-ncov/daily-life-coping/essential-goods-services.html',
             info:'Wear cloth face coverings in public settings and when around people who don’t live in your household, especially when other social distancing measures are difficult to maintain.'
         } 
@@ -75,9 +75,9 @@ const store2 = {
         id: 'choice3',
         description: 'Calmly hand over your toilet paper and leave.',
         result: {
-            health: 20,
-            wealth: -15,
-            description: 'What a waste of time and gas.',
+            health: 10,
+            wealth: 0,
+            description: 'You didn\'t get toilet paper but they needed it more than you.',
             url: 'https://www.cnn.com/2020/03/09/health/toilet-paper-shortages-novel-coronavirus-trnd/index.html',
             info:'If you think toilet paper is gonna save you, you got another thing coming...'
         } 
@@ -160,7 +160,7 @@ const work2 = {
         result: {
             health: -20,
             wealth: 20,
-            description: 'Seriously?! Maybe you want to take a look at your priories my friend.',
+            description: 'Seriously?! Maybe you want to take a look at your priorities my friend.',
             url: 'https://youtu.be/TYgTkJD1BHY',
             info:'COVID-19 can be spread by people who do not have symptoms and do not know that they are infected. That’s why it’s important for everyone to wear cloth face coverings in public settings and practice social distancing (staying at least 6 feet away from other people).'
         } 
@@ -185,7 +185,7 @@ const bar = {
     title: 'Bar',
 
     description: 
-        'What a long day!  So much work, so much strife, so THIRSTY!!  A cold one and some company sounds like a way to cap off a nightmare of a day. You grab your mask and enter your favorite watering hole. Bellying up to the bar but right before you order, you hear the voice of your old coworker call your name.  You turn to find that they are at a table with a pitch of beer and an empty glass with your name on it.  What do you do?',
+        'What a long day!  So much work, so much strife, so THIRSTY!!  A cold one and some company sounds like a way to cap off a nightmare of a day. You grab your mask and enter your favorite watering hole. Bellying up to the bar but right before you order, you hear the voice of your old coworker call your name.  You turn to find that they are at a table with a pitcher of beer and an empty glass with your name on it.  What do you do?',
 
     nextLevel: 'beach',
     choices: [{
