@@ -167,6 +167,7 @@ label{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 }
 
 .checkmark {
@@ -247,7 +248,7 @@ button {
 }
 
 .result-image {
-    background-size: 68%;
+    background-size: 55%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -255,8 +256,8 @@ button {
     justify-content: center;
     font-size: 1em;
     margin-top: 60px;
-    padding-left: 250px;
-    padding-right: 265px;
+    padding-left: 270px;
+    padding-right: 275px;
     padding-bottom: 220px;
     
 }
@@ -299,6 +300,7 @@ p {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
 .popup {
@@ -347,8 +349,9 @@ p {
 .fall-dead {
     margin-bottom: 200px;
     position: relative; 
-    top: 50%; 
-    left: 50%; 
+    top: 100%;  
+    left: 50%;
+    bottom: 100%; 
     transform: translate(-75%, -75%);  
     animation: bouncing 5s infinite;
     
@@ -380,25 +383,25 @@ p {
       -webkit-animation-timing-function: ease-out;
     }
     0% {
-      bottom: 200px;
+      bottom: 600px;
       left: 0;
       -webkit-animation-timing-function: ease-in;
     }
     55% {
-      bottom: 50px;
+      bottom: 200px;
       -webkit-animation-timing-function: ease-in;
     }
     80% {
-      bottom: 25px;
+      bottom: 175px;
       -webkit-animation-timing-function: ease-in;
     }
     95% {
-      bottom: 10px;
+      bottom: 125px;
       -webkit-animation-timing-function: ease-out;
     }
     100% {
       left: 125px;
-      bottom: 0;
+      bottom: 100;
       -webkit-animation-timing-function: ease-out;
     }
      100% {
@@ -406,7 +409,17 @@ p {
     }
 }  
 
+<<<<<<< HEAD
+.about-that-body {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+=======
 /* #opening-sound {
     display: none;
 
 } */
+>>>>>>> 46bf9aad0ae4d9e878dab583dc080ccb3c6ac55f
