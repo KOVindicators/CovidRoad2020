@@ -1,5 +1,5 @@
 //EXPORT FUNCTIONS
-import { findById } from './utils.js';
+import { findById, setUser } from './utils.js';
 import occupations from './data/occupations.js';
 import levels from './data/data-levels.js';
 
@@ -11,7 +11,7 @@ import levels from './data/data-levels.js';
 // RENDER FINAL RESULTS - Part 1 - WINNER
 // RENDER FINAL RESULTS - Part 2 - LOSER
 
-export function renderStartPage(occupationList) {
+export function renderStartPage(occupationList, userId) {
     const mainSectionEl = document.createElement('section');
     mainSectionEl.classList.add('main-section');
     //TODO select random image
@@ -39,6 +39,7 @@ export function renderStartPage(occupationList) {
     const emailInput = document.createElement('input');
     emailInput.name = 'email';
     emailInput.type = 'email';
+    emailInput.value = userId;
     emailLabelEl.append(emailInput);
     formEl.append(nameLabelEl, ageLabelEl, emailLabelEl);
     occupationList.forEach(occupation => {
@@ -104,11 +105,12 @@ export function renderHeader(user) {
     return { ulLeftEl, ulCenterEl, ulRightEl };
 }
 
-export function renderRandom(event) {
+export function renderRandom(event, user) {
     const sectionEl = document.createElement('section');
     sectionEl.id = 'eventPopup';
     sectionEl.classList.add('popup');
-
+    user.health += event.health;
+    user.wealth += event.wealth;
     const titleEl = document.createElement('h2');
     titleEl.textContent = event.title;
     
@@ -128,15 +130,26 @@ export function renderRandom(event) {
         resultDivW.textContent = `You have lost $${Math.abs(event.wealth)}!`;
     }
     
+    const audio = document.createElement('audio');
+    audio.id = 'random-event-sound';
+    audio.src = '../assets/sound-folder/random-event-sound.mp3';
+    audio.autoplay = true;
+    audio.type = 'audio/ogg';
+    
 
     const continueButtonEl = document.createElement('button');
     continueButtonEl.textContent = 'Next';
     continueButtonEl.classList.add('glow');
     continueButtonEl.addEventListener('click', () => {
+        setUser(user);
+
         const eventPopup = document.querySelector('#eventPopup');
         eventPopup.classList.toggle('hidden');
+        if (user.health <= 0){
+            window.location = `../results/?userId=${user.id}`;
+        }
     });
 
-    sectionEl.append(titleEl, descriptionEl, resultDivH, resultDivW, continueButtonEl);
+    sectionEl.append(titleEl, descriptionEl, resultDivH, resultDivW, continueButtonEl, audio);
     return sectionEl;
 }

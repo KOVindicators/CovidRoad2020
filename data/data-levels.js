@@ -1,6 +1,6 @@
 const store = {
     id: 'store',
-    picture: 'store-pics/costco.png', //change to costco img
+    picture: 'store-pics/costco.png', 
     title: 'Grocery Shopping',
     description: 
         "You need to make a supply run as you're current stock of toilet paper is much too low! You get to the store and have to wait in line 6 ft. distanced with your mask (cause you value social responsibility and your part in it). There's an angry ignorant person yelling about without their mask on. What do you do?",
@@ -36,7 +36,7 @@ const store = {
             wealth: -15,
             description: 'What a waste of time and gas.',
             url: 'https://youtu.be/nOa8wIhQdzo',
-            info:'Key Times to Practice Social Distancin: 1. Inside your home : when someone has, or things they have COVID-19. If possible stay at least 6 feet away. 2. Outside your home: Stay at least 6 feet away from people outside of your household in indoor/outdoor spaces. Stay out of crowded places if possible.'
+            info:'Key Times to Practice Social Distancing: 1. Inside your home : when someone has, or things they have COVID-19. If possible stay at least 6 feet away. 2. Outside your home: Stay at least 6 feet away from people outside of your household in indoor/outdoor spaces. Stay out of crowded places if possible.'
         } 
     }
     ],
@@ -68,7 +68,7 @@ const store2 = {
             wealth: -15,
             description: 'Violence is never the answer. What could you have done better?',
             url: 'https://orncc.net',
-            info:'Have you ever heard of non-violent communication? If not, check it out here!'
+            info:'Have you ever heard of non-violent communication? If not, check it out here! '
         } 
     },
     {
@@ -137,7 +137,7 @@ const work = {
 
 const work2 = {
     id: 'work2',
-    picture: 'work-pics/engineerWork.png', //img needs to change
+    picture: 'work-pics/engineerWork.png', 
     title: 'Going to work',
     description: 
         "Your boss calls you up, saying there's some vital paperwork needed for the zoom presentation your company is doing! Why it's not saved digitally is beyond you, so you rally. But before you head out the door you grab...?",
@@ -171,7 +171,7 @@ const work2 = {
         result: {
             health: 0,
             wealth: 20,
-            description: 'Healthy and wealthy, wise choice. But dont forget your mask!',
+            description: 'Healthy and wealthy, wise choice. But don\'t forget your mask!',
             url: 'https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/cloth-face-cover-guidance.html',
             info:'Cloth face coverings may help prevent people who have COVID-19 from spreading the virus to others.'
         } 
@@ -268,7 +268,7 @@ const beach = {
             description: 
                 'Smart choice! Although there may be many reopening, we are still not all the way through this thing. It would be better to sit tight and keep social distancing.',
             url: 'https://www.oregonlive.com/coronavirus/2020/05/whats-safe-whats-not-guide-to-oregons-reopening-amid-coronavirus.html',
-            info:'a;sdlkfa'
+            info:'The best way to avoid catching COVID 19 and to avoid spreading COVID 19 is to shelter in place and venture out only when absolutely necessary '
         } 
     }
     ],

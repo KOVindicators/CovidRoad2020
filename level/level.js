@@ -4,9 +4,14 @@ import { findById, getUser, setUser, getRandomEvent, rando } from '../utils.js';
 
 import { renderHeader, renderRandom } from '../render.js';
 
-const user = getUser();
-const avatarImage = findById(user.occupation, occupations).avatar;
 const params = new URLSearchParams(window.location.search);
+const userId = params.get('userId');
+const user = getUser(userId);
+const avatarImage = findById(user.occupation, occupations).avatar;
+
+
+
+
 const levelId = params.get('id');
 const currentLevel = findById(levelId, levels);
 const bigDivEl = document.createElement('div');
@@ -18,15 +23,15 @@ headerEl.append(ulLeftEl, ulCenterEl, ulRightEl);
 
 if (rando()) {
     const event = getRandomEvent();
-    const eventSectionEl = renderRandom(event);
+    const eventSectionEl = renderRandom(event, user);
+
     const healthEl = document.getElementById('health');
     const wealthEl = document.getElementById('wealth');
-    user.health += event.health;
-    user.wealth += event.wealth;
+   
     healthEl.textContent = `Health: ${user.health}`;
     wealthEl.textContent = `Money: $${user.wealth}`;
     main.append(eventSectionEl);
-
+    
 }
 
 
@@ -92,13 +97,15 @@ form.addEventListener('submit', (e) => {
     tooltipEl.classList.add('tooltip');
     const spanEl = document.createElement('span');
     spanEl.classList.add('tooltiptext');
-    const aEl = document.createElement('a');
     
+    
+    
+    
+    const aEl = document.createElement('a');
     aEl.textContent = 'More Info Here';
     aEl.href = result.url;
     aEl.target = '_blank';
-    tooltipEl.textContent = 'Covid Information ';
-    
+    tooltipEl.textContent = 'MORE INFORMATION ';
     spanEl.textContent = result.info;
     spanEl.append(aEl);
     tooltipEl.append(spanEl);
@@ -117,9 +124,9 @@ form.addEventListener('submit', (e) => {
     
     nextButton.addEventListener('click', () => {
         if (currentLevel.nextLevel === 'end' || user.health <= 0){
-            window.location = '../results';
+            window.location = `../results/?userId=${user.id}`;
         } else {
-            window.location = `../level/?id=${currentLevel.nextLevel}`;
+            window.location = `../level/?id=${currentLevel.nextLevel}&userId=${user.id}`;
         }
     });
 
