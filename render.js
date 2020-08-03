@@ -1,20 +1,12 @@
-//EXPORT FUNCTIONS
 import { findById, setUser, getUser } from './utils.js';
 import occupations from './data/occupations.js';
 import levels from './data/data-levels.js';
 
-// PAGE RENDERING FUNCTIONS WILL GO HERE:
-
-// RENDER HEADER
-// RENDER LEVEL - Part 1
-// RENDER LEVEL RESULTS- Part 2
-// RENDER FINAL RESULTS - Part 1 - WINNER
-// RENDER FINAL RESULTS - Part 2 - LOSER
 
 export function renderStartPage(occupationList, userId) {
     const mainSectionEl = document.createElement('section');
     mainSectionEl.classList.add('main-section');
-    //TODO select random image
+
     const user = getUser(userId);
 
     const startImgEl = document.createElement('img');
@@ -46,8 +38,8 @@ export function renderStartPage(occupationList, userId) {
     emailInput.value = userId;
     emailLabelEl.append(emailInput);
     formEl.append(nameLabelEl, ageLabelEl, emailLabelEl);
-    occupationList.forEach(occupation => {
 
+    occupationList.forEach(occupation => {
         const labelEl = document.createElement('label');
         labelEl.textContent = occupation.title;
         labelEl.classList.add('glow');
@@ -61,10 +53,11 @@ export function renderStartPage(occupationList, userId) {
         radioButtonEl.name = 'occupation';
         radioButtonEl.value = occupation.id;
         radioButtonEl.classList.add('hidden');
+
         labelEl.append(radioButtonEl, imgEl);
         formEl.append(labelEl);
     });
-
+    
     const submitButtonEl = document.createElement('button');
     submitButtonEl.classList.add('glow');
     submitButtonEl.textContent = 'Start:';
@@ -109,6 +102,7 @@ export function renderHeader(user) {
     return { ulLeftEl, ulCenterEl, ulRightEl };
 }
 
+
 export function renderRandom(event, user) {
     const sectionEl = document.createElement('section');
     sectionEl.id = 'eventPopup';
@@ -123,6 +117,7 @@ export function renderRandom(event, user) {
 
     const resultDivH = document.createElement('div');
     const resultDivW = document.createElement('div');
+
     if (event.health > 0) {
         resultDivH.textContent = `You have gained ${event.health} health!`;
     } else if (event.health < 0) {
@@ -140,7 +135,6 @@ export function renderRandom(event, user) {
     audio.autoplay = true;
     audio.type = 'audio/ogg';
     
-
     const continueButtonEl = document.createElement('button');
     continueButtonEl.textContent = 'Next';
     continueButtonEl.classList.add('glow');
@@ -149,6 +143,7 @@ export function renderRandom(event, user) {
 
         const eventPopup = document.querySelector('#eventPopup');
         eventPopup.classList.toggle('hidden');
+        
         if (user.health <= 0){
             window.location = `../results/?userId=${user.id}`;
         }
@@ -157,3 +152,4 @@ export function renderRandom(event, user) {
     sectionEl.append(titleEl, descriptionEl, resultDivH, resultDivW, continueButtonEl, audio);
     return sectionEl;
 }
+

@@ -1,19 +1,19 @@
-// import functions and grab DOM elements
 import occupations from './data/occupations.js';
 import { getUser, findById, setUser } from './utils.js';
+
 const formEl = document.querySelector('form');
 const mainEl = document.querySelector('main');
-// initialize state
-
-// set event listeners to update state and DOM
 
 
 formEl.addEventListener('submit', (e) => {
     e.preventDefault();
+
     const myFormData = new FormData(formEl);
     window.scrollTo(0, 0);
+
     const emailAddress = myFormData.get('email');
     const user = getUser(emailAddress);
+
     if (user) {
         const confirmEl = document.createElement('section');
         confirmEl.classList.add('popup');
@@ -33,6 +33,7 @@ formEl.addEventListener('submit', (e) => {
             user.completed = {};
 
             setUser(user);
+            
             window.location = `./level/?id=store&userId=${user.id}`;
         });
 
@@ -44,13 +45,12 @@ formEl.addEventListener('submit', (e) => {
         });
 
         confirmEl.append(messageEl, continueButtonEl, restartButtonEl);
-        
         mainEl.append(confirmEl);
 
-
     } else {
-        window.location = `./start/?userId=${emailAddress}`;
 
+        window.location = `./start/?userId=${emailAddress}`;
     }
     
 });
+

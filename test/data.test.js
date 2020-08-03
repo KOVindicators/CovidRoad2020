@@ -1,4 +1,3 @@
-// IMPORT MODULES under test here:
 import { findById } from '../utils.js';
 import occupations from '../data/occupations.js';
 import levels from '../data/data-levels.js';
@@ -6,6 +5,7 @@ import levels from '../data/data-levels.js';
 const test = QUnit.test;
 
 test('find item by id', assert => {
+
     const id = 'greg';
     const expected = {
         id: 'greg',
@@ -24,21 +24,18 @@ test('find item by id', assert => {
 
 
 test('to return null if id not found', assert => {
-    //Arrange
+    
     const id = 'not found';
     const expected = null;
 
-    //Act 
     const chosenOccupation = findById(occupations, id);
 
-    //Assert
     assert.equal(chosenOccupation, expected);
 });
 
 
 test('testing our data-levels rendering', assert => {
-    //Arrange
-    // Set up your arguments and expectations
+
     const id = 'store';
     const expected = { 
         id: 'store',
@@ -84,13 +81,8 @@ test('testing our data-levels rendering', assert => {
         ],
     };
     
-    //Act 
-    // Call the function you're testing and set the result to a const
     const chosenLevel = findById(id, levels);
 
-    //Expect
-    // Make assertions about what is expected versus the actual result
-    // assert.ok(chosenLevel);
     assert.deepEqual(expected, chosenLevel);
 });
 

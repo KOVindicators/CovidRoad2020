@@ -38,9 +38,9 @@ const store = {
             url: 'https://youtu.be/nOa8wIhQdzo',
             info:'Key Times to Practice Social Distancing: 1. Inside your home : when someone has, or things they have COVID-19. If possible stay at least 6 feet away. 2. Outside your home: Stay at least 6 feet away from people outside of your household in indoor/outdoor spaces. Stay out of crowded places if possible.'
         } 
-    }
-    ],
+    }],
 };
+
 
 const store2 = {
     id: 'store2',
@@ -81,29 +81,25 @@ const store2 = {
             url: 'https://www.cnn.com/2020/03/09/health/toilet-paper-shortages-novel-coronavirus-trnd/index.html',
             info:'If you think toilet paper is gonna save you, you got another thing coming...'
         } 
-    }
-    ],
+    }],
 };
+
 
 const work = {
     id: 'work', 
     picture: 'work-pics/deliveryWork.png',
     title: 'Work',
-
-    description: 'Another beautiful day in Portland!  Birds are tweeting and so is the president. Smartly avoiding Twitter, you  walk out the door and head to your job.  You get in your car and enjoy a peaceful commute to work.  Halfway to work, you realize that you forgot your mask!!  Thats ok though because you keep a spare in your glove box (because you are a smart person). Your coworker Chad is wearing his mask under his nose again, while customer walks in without a mask sniffling.  Chad tells the man that masks are required to be in the building.  “I am not a sheeple!  I will not be masked!” exclaims the clearly agitated man. What do you do?',
-
-    
-
+    description: 
+        'Another beautiful day in Portland!  Birds are tweeting and so is the president. Smartly avoiding Twitter, you  walk out the door and head to your job.  You get in your car and enjoy a peaceful commute to work.  Halfway to work, you realize that you forgot your mask!!  Thats ok though because you keep a spare in your glove box (because you are a smart person). Your coworker Chad is wearing his mask under his nose again, while customer walks in without a mask sniffling.  Chad tells the man that masks are required to be in the building.  “I am not a sheeple!  I will not be masked!” exclaims the clearly agitated man. What do you do?',
     nextLevel: 'work2',
     choices: [{
         id: 'choice1',
         description: 'Physically confront the customer',
-        
         result: {
             health: -20,
             wealth: +100,
-            description: 'How dare he?  Who does he think he is?  You physically grab the man and push him out of the building.  While you are nose to nose with him, he coughs into your face.  You can feel the moisture around your eyes.  GROSS!  Your boss is so impressed that she lays a 100 dollar bill on you and tells you to take the rest of the day off.',
-            
+            description: 
+                'How dare he?  Who does he think he is?  You physically grab the man and push him out of the building.  While you are nose to nose with him, he coughs into your face.  You can feel the moisture around your eyes.  GROSS!  Your boss is so impressed that she lays a 100 dollar bill on you and tells you to take the rest of the day off.',
             url: 'https://www.theverge.com/21303553/face-mask-coronavirus-cdc-etiquette-public',
             info: 'Confronting people who refuse to wear a mask can be dangerous. While you feel it may be your duty to inform the person of the threat of spreading COVID 19 being reduced by mask wearing, some people react violently.  Be careful.' 
         } 
@@ -114,8 +110,8 @@ const work = {
         result: {
             health: -15,
             wealth: -20,
-            description: 'Is it really your job to tell other people what to wear and how to act?  This is just a job after all. You just come here to do your job, make some money and go home.  It’s not your problem.  The man rants and raves for a while but eventually leaves.  Other customers were offended and left along with their ;money.',
-            
+            description: 
+                'Is it really your job to tell other people what to wear and how to act?  This is just a job after all. You just come here to do your job, make some money and go home.  It’s not your problem.  The man rants and raves for a while but eventually leaves.  Other customers were offended and left along with their money.',
             url: 'https://www.theverge.com/21303553/face-mask-coronavirus-cdc-etiquette-public',
             info: 'Although you may not want to confront people who refuse to mask up, they should be SHAMED until they realize comply, damnit! But seriously, be careful.'
         } 
@@ -126,14 +122,14 @@ const work = {
         result: {
             health: -5,
             wealth: 10,
-            description: 'This guy needs to go, but is it really your job?  You just come here to do your job and not have confrontations.  You call the manager because, after all, that is why they make the big bucks.  The manager calls security and the customer is eventually escorted out of the building.',
-            
+            description: 
+                'This guy needs to go, but is it really your job?  You just come here to do your job and not have confrontations.  You call the manager because, after all, that is why they make the big bucks.  The manager calls security and the customer is eventually escorted out of the building.',
             url: 'https://www.universalclass.com/articles/business/the-most-effective-way-of-dealing-with-confrontation-in-the-workplace.htm',
             info: 'This is the probably the least confrontational way to deal with this situation.  Never put yourself in danger in order to encourage compliance with mask wearing rules.' 
         } 
-    }
-    ],
+    }],
 };
+
 
 const work2 = {
     id: 'work2',
@@ -145,7 +141,6 @@ const work2 = {
     choices: [{
         id: 'choice1',
         description: 'A mask!',
-        
         result: {
             health: 20,
             wealth: 20,
@@ -175,18 +170,16 @@ const work2 = {
             url: 'https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/cloth-face-cover-guidance.html',
             info:'Cloth face coverings may help prevent people who have COVID-19 from spreading the virus to others.'
         } 
-    }
-    ],
+    }],
 };
+
 
 const bar = {
     id: 'bar',
     picture: 'kellys.jpg',
     title: 'Bar',
-
     description: 
         'What a long day!  So much work, so much strife, so THIRSTY!!  A cold one and some company sounds like a way to cap off a nightmare of a day. You grab your mask and enter your favorite watering hole. Bellying up to the bar but right before you order, you hear the voice of your old coworker call your name.  You turn to find that they are at a table with a pitcher of beer and an empty glass with your name on it.  What do you do?',
-
     nextLevel: 'beach',
     choices: [{
         id: 'choice1',
@@ -223,8 +216,7 @@ const bar = {
             url: 'https://www.businessinsider.com/why-bars-are-so-dangerous-for-spreading-the-coronavirus-2020-7',
             info: 'Being at a bar is bad news according to Dr Fauci. Drink and home and help stop the spread of COVID 19.' 
         } 
-    }
-    ],
+    }],
 };
 
 
@@ -241,8 +233,7 @@ const beach = {
         result: {
             health: -30,
             wealth: -50,
-            description: 
-                'What an expensive trip, with an even more expensive risk! Not too bad, but why risk it?',
+            description: 'What an expensive trip, with an even more expensive risk! Not too bad, but why risk it?',
             url: 'https://www.cdc.gov/coronavirus/2019-ncov/community/large-events/considerations-for-events-gatherings.html',
             info:'Highest risk: Large in-person gatherings where it is difficult for individuals to remain spaced at least 6 feet apart and attendees travel from outside the local area.'
         } 
@@ -253,8 +244,7 @@ const beach = {
         result: {
             health: -40,
             wealth: -50,
-            description: 
-                'And you didnt even think to bring your mask?! Sounds like you need a refresher.',
+            description: 'And you didnt even think to bring your mask?! Sounds like you need a refresher.',
             url: 'https://www.kgw.com/article/news/local/as-hundreds-enter-oregons-closed-parks-and-beaches-crackdown-possible/283-7848f5ba-aea7-49e6-a801-1c4e278a71b0',
             info:'Coronavirus: As hundreds enter Oregons closed parks and beaches, crackdown possible.'
         } 
@@ -265,17 +255,17 @@ const beach = {
         result: {
             health: 50,
             wealth: 5,
-            description: 
-                'Smart choice! Although there may be many reopening, we are still not all the way through this thing. It would be better to sit tight and keep social distancing.',
+            description: 'Smart choice! Although there may be many reopening, we are still not all the way through this thing. It would be better to sit tight and keep social distancing.',
             url: 'https://www.oregonlive.com/coronavirus/2020/05/whats-safe-whats-not-guide-to-oregons-reopening-amid-coronavirus.html',
             info:'The best way to avoid catching COVID 19 and to avoid spreading COVID 19 is to shelter in place and venture out only when absolutely necessary '
         } 
-    }
-    ],
+    }],
 };
+
 
 const levels = [
     store, store2, work, work2, bar, beach
 ];
+
 export default levels;
 

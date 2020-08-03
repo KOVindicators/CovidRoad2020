@@ -1,18 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,700;1,900&display=swap");
+
 body {
-    /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
     --color1: #01FE05;
     --color2: darkslategray;
     --color3: black;
     --color4: lightslategray;
     --color5: greenyellow;
-
-    /* --color1: hsla(45, 86%, 83%, 1);
-    --color2: hsla(135, 65%, 98%, 1);
-    --color3: hsla(315, 37%, 86%, 1);
-    --color4: hsla(45, 73%, 98%, 1);
-    --color5: hsla(224, 40%, 79%, 1); */
     
     --header-height: 80px;
     --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
@@ -24,11 +18,10 @@ body {
     color: #01FE05;
     line-height: 1.5;
 }
+
 .avatar-image {
     width: 60px;
-
 }
-
 
 header {
     height: 85px; 
@@ -40,10 +33,7 @@ header {
     position: fixed;
     width: 100%;
     z-index: 9;
-    
-    
 }
-
 
 main {
     display: flex;
@@ -69,12 +59,9 @@ section {
     box-shadow: lightslategray 10px 10px;
 }
 
-
 div {
-    
     padding: 20px;
     margin: 20px;
-    
 }
 
 footer{
@@ -88,8 +75,6 @@ footer{
 a, a:visited {
     color: var(--color1);
     cursor: pointer;
-
-
 }
 
 .level {
@@ -98,41 +83,34 @@ a, a:visited {
     margin: 20px;
 }
 
+
 .image-box {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 556px;
 }
-/* .image-box{
-    height set?
-} */
 
 .avatar {
     display: flex;
     align-items: center;
-    
 }
 
-.avatar img:hover{
+.avatar img:hover {
     width: 55px;
     transition-duration: 50ms, 50ms;
-    
 }
 
 .main-section {
     background-color:darkslategray;
-    
-    
 }
+
 #level-avatar {
     width: 150px;
     position: relative;
     left: 250px;
     top: 170px;
     margin-bottom: 20px;
-   
-    
 }
 
 #level-avatar.scene-animation {
@@ -140,14 +118,11 @@ a, a:visited {
     transition-duration: 3s;
     position: relative;
     left: -14em;
-    
-
 }
 
 .scene{
     border: 2px #01FE05 dotted;
     font-size: 1em;
-
 }
 
 label{
@@ -156,11 +131,8 @@ label{
 }
 
 .glow:hover, .glow:checked  {
-    
   color: #fff;
-  /* text-align: center; */
   animation: label 1s ease-in-out infinite alternate;
-
 }
 
 .glow {
@@ -174,7 +146,6 @@ label{
 
 .checkmark {
    height: 50px;
-   
 }
 
 input:checked + .checkmark {
@@ -188,8 +159,6 @@ input:checked + .checkmark {
     background-size: cover;
     border: solid 4px #01FE05;
     visibility: hidden;
-    
-    
 }
 
 form {
@@ -210,9 +179,7 @@ button {
     border-radius: 8px;
 }
 
-
 .tooltip {
-    
     position: relative;
     display: inline-block;
     border-style: groove;
@@ -222,12 +189,9 @@ button {
     color: #01FE05;
     text-align: center;
     animation: tooltip 1s ease-in-out infinite alternate;
-    
-    
-  }
+}
 
  .tooltiptext {
-    
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     visibility: hidden;
@@ -240,13 +204,10 @@ button {
     position: absolute;
     z-index: 1;
     animation: tooltiptext 3s ease-in-out infinite alternate;
-    
-  }
-
+}
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
-  
 }
 
 .result-image {
@@ -261,12 +222,10 @@ button {
     padding-left: 280px;
     padding-right: 275px;
     padding-bottom: 220px;
-    
 }
 
 .result-message {
     margin: 20px;
-   
 }
 
 @keyframes label  {
@@ -278,13 +237,10 @@ button {
         text-shadow: 0 0 20px #fff, 0 0 30px  #01FE05, 0 0 40px  #01FE05, 0 0 50px  #01FE05, 0 0 60px  #01FE05, 0 0 70px #01FE05, 0 0 80px #01FE05;
         }
 
-
 }
-
 
 .hidden {
     display: none;
-
 }
 
 .intro {
@@ -319,15 +275,9 @@ p {
     align-items: center;
 }
 
-
 #result-section {
     margin-bottom: 20px;
 }
-
-/* .dancehall {
-    
-} */
-
  
 .tiny-dancer {
     margin-bottom: 200px;
@@ -357,28 +307,25 @@ p {
     bottom: 10%; 
     transform: translate(-75%, -300%);  
     animation: bouncing 5s infinite;
-    
-
 }
- @keyframes tooltip {
+
+@keyframes tooltip {
     from {
       text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #01FE05, 0 0 40px #01FE05, 0 0 50px #01FE05, 0 0 60px #01FE05, 0 0 70px #01FE05;
     }
     to {
       text-shadow: 0 0 20px #fff, 0 0 30px #44bdd3, 0 0 40px #44bdd3, 0 0 50px #44bdd3, 0 0 60px #44bdd3, 0 0 70px #44bdd3, 0 0 80px #44bdd3;
     }
-  } 
+} 
 
- 
-
- @keyframes tooltiptext {
+@keyframes tooltiptext {
     from {
       text-shadow: 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff;
     }
     to {
       text-shadow: 0 0 00px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff;
     }
-  }  
+}  
 
 @keyframes bouncing { 
     40%, 70%, 90% {
@@ -419,6 +366,7 @@ p {
     align-items: center;
     justify-content: center;
 }
+
 .about-section {
     margin-top: 200px;
 }
@@ -434,3 +382,4 @@ p {
     color: #fff;
     animation: label 1s ease-in-out infinite alternate;
 }
+
