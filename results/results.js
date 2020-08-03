@@ -1,11 +1,11 @@
 import { renderHeader } from '../render.js';
 import { getUser, findById } from '../utils.js';
 import occupations from '../data/occupations.js';
-// import levels from '../data/levels.js';
 
 const params = new URLSearchParams(window.location.search);
 const userId = params.get('userId');
 const user = getUser(userId);
+
 const headerEl = document.querySelector('header');
 const { ulLeftEl, ulCenterEl, ulRightEl } = renderHeader(user);
 headerEl.append(ulLeftEl, ulCenterEl, ulRightEl);
@@ -15,9 +15,10 @@ audio.id = 'random-event-sound';
 audio.src = '../assets/sound-folder/you-died-the-end.mp3';
 audio.autoplay = true;
 audio.type = 'audio/ogg';
-// const main = document.querySelector('main');
+
 const imageBox = document.querySelector('.image-box');
 imageBox.classList.add('result-image');
+
 const h2 = document.querySelector('.result-message');
 const button = document.getElementById('restart-button');
 const danceFloor = document.querySelector('.dancehall');
@@ -39,11 +40,7 @@ if (user.health <= 0) {
 }
 
 button.addEventListener('click', () => {
-    //restart user @ homepage
 
     window.location = '../start';
-
-    //restart with existing/ saved user data
-
 });
 
