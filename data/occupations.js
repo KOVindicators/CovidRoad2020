@@ -1,3 +1,5 @@
+// I would have liked to see more variation/impace among these roles
+
 const doctor = {
     id: 'doctor',
     avatar: 'doctor.png',

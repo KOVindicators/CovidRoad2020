@@ -4,6 +4,7 @@ import levels from '../data/data-levels.js';
 
 const test = QUnit.test;
 
+// I was looking for 3 functions to be thoroughly tested here . . .
 test('find item by id', assert => {
 
     const id = 'greg';
