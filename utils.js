@@ -60,10 +60,7 @@ export function setUser(user) {
 
 
 export function rando() {
-    const random = Math.random();
-
-    if (random > .5) return true;
-    return false;
+    return Math.random() > .5;
 }
 
 

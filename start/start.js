@@ -21,6 +21,7 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const formData = new FormData(form);
+    // lines 25- 38 could be abstracted out into a makeUser function
     const occupationId = formData.get('occupation');
     const occupation = findById(occupationId, occupations);
     const name = formData.get('name');

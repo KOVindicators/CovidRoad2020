@@ -1,3 +1,5 @@
+// the code here is a bit tough to read. I'd like to see all the event listeners in one place, and all the globally-scoped code together instead of defined between evernt listeners. some named functions would be helpful too for readability
+
 import levels from '../data/data-levels.js';
 import occupations from '../data/occupations.js';
 import { findById, getUser, setUser, getRandomEvent, rando } from '../utils.js';
@@ -14,10 +16,12 @@ const bigDivEl = document.createElement('div');
 const headerEl = document.querySelector('header');
 const main = document.querySelector('main');
 
+// cool destructuring!
 const { ulLeftEl, ulCenterEl, ulRightEl } = renderHeader(user);
 bigDivEl.classList.add('bigDiv');
 headerEl.append(ulLeftEl, ulCenterEl, ulRightEl);
 
+// this function could use a better name
 if (rando()) {
     const event = getRandomEvent();
     const eventSectionEl = renderRandom(event, user);
@@ -30,6 +34,7 @@ if (rando()) {
     main.append(eventSectionEl);
 }
 
+// why does this only happen for the store? kind of odd...
 if (levelId === 'store'){
     const audio = document.createElement('audio');
     audio.id = 'opening-sound';
@@ -57,23 +62,7 @@ const formEl = document.createElement('form');
 const labelDivEl = document.createElement('div');
 
 currentLevel.choices.forEach(choice => {
-    const labelEl = document.createElement('label');
-    labelEl.classList.add('glow');
-
-    const inputEl = document.createElement('input');
-    inputEl.type = 'radio';
-    inputEl.value = choice.id;
-    inputEl.name = 'choice';
-    inputEl.classList.add('check-input');
-    inputEl.style.visibility = 'hidden';
-
-    const imgEl = document.createElement('div');
-    imgEl.classList.add('checkmark');
-    labelEl.textContent = choice.description;
-    labelDivEl.append(labelEl);
-    labelEl.append(inputEl);
-    labelEl.append(imgEl);
-
+    makeLabel(choice);
 });
 
 const buttonEl = document.createElement('button');
@@ -94,6 +83,50 @@ form.addEventListener('submit', (e) => {
     window.scrollTo(0, 0);
 
     const formData = new FormData(form);
+    const resultSection = makeResultsSection(formData);
+
+    setUser(user);
+
+    const nextButton = document.createElement('button');
+    nextButton.textContent = 'NEXT';
+    nextButton.classList.add('glow');
+    resultSection.append(nextButton);
+    
+    nextButton.addEventListener('click', () => {
+        // nice piece of logic here!
+        if (currentLevel.nextLevel === 'end' || user.health <= 0) {
+            window.location = `../results/?userId=${user.id}`;
+        } else {
+            window.location = `../level/?id=${currentLevel.nextLevel}&userId=${user.id}`;
+        }
+    });
+});
+
+const levelAvatar = document.querySelector('#level-avatar');
+window.addEventListener('load', () => {
+    levelAvatar.classList.add('scene-animation');
+});
+
+function makeLabel(choice) {
+    const labelEl = document.createElement('label');
+    labelEl.classList.add('glow');
+
+    const inputEl = document.createElement('input');
+    inputEl.type = 'radio';
+    inputEl.value = choice.id;
+    inputEl.name = 'choice';
+    inputEl.classList.add('check-input');
+    inputEl.style.visibility = 'hidden';
+
+    const imgEl = document.createElement('div');
+    imgEl.classList.add('checkmark');
+    labelEl.textContent = choice.description;
+    labelDivEl.append(labelEl);
+    labelEl.append(inputEl);
+    labelEl.append(imgEl);
+}
+
+function makeResultsSection(formData) {
     const choiceId = formData.get('choice');
     const result = findById(choiceId, currentLevel.choices).result;
     user.health += result.health;
@@ -107,7 +140,7 @@ form.addEventListener('submit', (e) => {
     tooltipEl.classList.add('tooltip');
     const spanEl = document.createElement('span');
     spanEl.classList.add('tooltiptext');
-    
+
     const aEl = document.createElement('a');
     aEl.textContent = 'More Info Here';
     aEl.href = result.url;
@@ -119,25 +152,6 @@ form.addEventListener('submit', (e) => {
     resultSection.append(resultDiv, tooltipEl);
     main.append(resultSection);
     user.completed[currentLevel.id] = true;
-
-    setUser(user);
-
-    const nextButton = document.createElement('button');
-    nextButton.textContent = 'NEXT';
-    nextButton.classList.add('glow');
-    resultSection.append(nextButton);
-    
-    nextButton.addEventListener('click', () => {
-        if (currentLevel.nextLevel === 'end' || user.health <= 0) {
-            window.location = `../results/?userId=${user.id}`;
-        } else {
-            window.location = `../level/?id=${currentLevel.nextLevel}&userId=${user.id}`;
-        }
-    });
-});
-
-const levelAvatar = document.querySelector('#level-avatar');
-window.addEventListener('load', () => {
-    levelAvatar.classList.add('scene-animation');
-});
+    return resultSection;
+}
 
