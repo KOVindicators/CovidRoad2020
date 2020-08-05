@@ -36,6 +36,7 @@ if (user.health <= 0) {
 } else {
     imageBox.style.backgroundImage = 'url(../assets/trophy.png)';
     h2.textContent = `${user.name} Survived! Congratuations!`;
+    // lol
     avatarEl.classList.add('tiny-dancer');
 }
 
